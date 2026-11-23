@@ -2,7 +2,7 @@
 
 ## Установленные и активные
 
-Проверка: `opencode api get /api/plugin` — все тринадцать в статусе `active`.
+Проверка: `opencode api get /api/plugin` — все четырнадцать в статусе `active`.
 
 | Плагин | Тип | Что даёт |
 | --- | --- | --- |
@@ -13,6 +13,7 @@
 | `envsitter-guard@latest` (0.1.1) | package | Запрещает обычным инструментам читать/менять `.env`; даёт 15 безопасных `envsitter_*` без вывода значений |
 | `@slkiser/opencode-quota@latest` (6.3.0) | package | Лимиты, расход и цены в TUI/Desktop: `/quota`, `/quota_usage`, `/quota_status`, `/quota_settings` |
 | `opencode-v2-ponytail-scoped@latest` (0.1.0) | package | Правила «минимум кода» для выбранных агентов; 6 навыков и 6 команд `ponytail-*`. По умолчанию выключен |
+| `hffmnnj.deep-research@latest` (0.1.1) | package | Постоянная библиотека исследований: `tools.research.*`, навык `deep-research`, 3 read-only субагента. См. [глубокое исследование](deep-research.md) |
 | `autopilot-tools` | local | Цель, шаги, чекпоинты, стоп-условия; хуки `context` и `compaction`. См. [автопилот](autonomy.md) |
 | `brain-tools` | local | `brain.save / search / index / tags / links` — работа со вторым мозгом, поиск по тегам и вики-ссылкам |
 | `graph-tools` | local | `graph.project / tree / memory / save` — графы через `graph-core.mjs` |
@@ -82,6 +83,16 @@
 внедряются, пока агент явно не назначен. Команды `/ponytail lite|full|ultra|off`,
 `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`.
 Плагин стоит последним в списке `plugins`, чтобы его правила в системном промпте применялись после остальных.
+
+### Постоянная библиотека исследований: hffmnnj.deep-research
+
+Плагин V2 с постоянной библиотекой исследований. Регистрирует пространство инструментов `research`
+(12 инструментов, только Code Mode: `tools.research.search`, `save`, `read`, `related`, `audit`, `cite` и другие),
+навык `deep-research` и трёх read-only субагентов `deep-research/researcher`, `deep-research/verifier`,
+`deep-research/librarian`. Библиотека лежит в `~/.local/share/opencode-deep-research/library/`: заметки Markdown
+плюс SQLite FTS5/векторный поиск. Перед исследованием стоит проверить библиотеку, найденное сохранять
+через `tools.research.save`, а содержимое библиотеки считать недоверенными данными. Подробности —
+в [глубоком исследовании](deep-research.md).
 
 ## С конфликтными зависимостями — не ставили
 

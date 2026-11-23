@@ -20,6 +20,7 @@
 | `react-expert` | React 18/19, Server Components, хуки, миграция с классов, состояние и производительность |
 | `typescript-pro` | Продвинутые типы TypeScript, type guards, utility types, брендированные типы, tRPC |
 | `react-best-practices` | 47 правил производительности React от Vercel (адаптация для Vite) |
+| `deep-research-lite` | Быстрое многоисточниковое исследование через встроенные `websearch`/`webfetch` |
 
 ## Глобальные команды
 
@@ -44,19 +45,21 @@
 
 ## От плагинов
 
-Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **23 навыка** и **36 команд** (включая встроенные).
+Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **24 навыка** и **36 команд** (включая встроенные).
 
 - `opencode-v2-ponytail-scoped` добавляет 6 навыков и 6 команд: `/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`. По умолчанию выключен: `~/.config/opencode/ponytail-scoped.json` содержит `{"default":"off","agents":{}}`. См. [плагины](plugins.md).
 - `@slkiser/opencode-quota` добавляет 4 команды: `/quota`, `/quota_usage [range]`, `/quota_status`, `/quota_settings`, плюс инструменты `quota_status`, `quota_settings_get/set`, `quota_provider_add/remove/test`.
 - `envsitter-guard` добавляет 15 инструментов `envsitter_*` для безопасной работы с `.env` без вывода секретов.
 - `cc-safety-net` добавляет команду `/cc-safety-net` и защитные хуки; `opencode-auto-resume` — `/auto-resume off|on|status`.
+- `hffmnnj.deep-research` регистрирует навык `deep-research`, 12 инструментов `tools.research.*` (только Code Mode) и трёх read-only субагентов: `deep-research/researcher`, `deep-research/verifier`, `deep-research/librarian`. Библиотека исследований хранится в `~/.local/share/opencode-deep-research/library/`. См. [глубокое исследование](deep-research.md).
 
-Итого собственных файлов: 13 навыков в `~/Desktop/opencode-boost/skills/` и 13 команд в `~/.config/opencode/commands/`.
+Итого собственных файлов: 14 навыков в `~/Desktop/opencode-boost/skills/` и 13 команд в `~/.config/opencode/commands/`.
 
 ## Глобальные агенты
 
 - `brain-keeper` — subagent; edit запрещён везде, кроме `~/Desktop/opencode-boost/brain/**`; shell запрещён.
 - `oc-admin` — subagent; read-only диагностика.
+- `deep-research/researcher`, `deep-research/verifier`, `deep-research/librarian` — read-only субагенты плагина `hffmnnj.deep-research`. См. [глубокое исследование](deep-research.md).
 
 ## Инструкции
 
