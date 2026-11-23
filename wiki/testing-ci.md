@@ -49,6 +49,11 @@ node scripts/smoke-admin.js
 Последний прогон: **8/8 OK**, `/api/graphs` отдаёт 3 графа, `/api/brain` — 15 MD-файлов,
 `/api/oc-check` — `ok=true`.
 
+Для CI есть `npm run smoke:ci` (`node scripts/smoke-admin.js --ci`): скрипт сам поднимает
+`admin/server.js` на отдельном порту с временными фикстурами, жёстко проверяет 6 локальных
+эндпоинтов и пропускает `/api/data` и `/api/oc-check` — им нужны OpenCode CLI и сервис `:28894`.
+Локальный прогон режима `--ci`: **6 OK + 2 SKIP**, exit 0.
+
 ## Проверка в браузере
 
 Через Playwright открыта страница админки. Подтверждено:
@@ -63,12 +68,33 @@ node scripts/smoke-admin.js
 ## GitHub Actions вики
 
 - Скрипт: `scripts/check-links.js` (только чтение Markdown).
-- Workflow: `.github/workflows/links.yml` — `actions/checkout@v4`, `actions/setup-node@v4` (Node 22),
-  затем `node scripts/check-links.js`.
+- Workflow `links.yml` закреплён на SHA `actions/checkout@v7` / `actions/setup-node@v7` (Node 22,
+  `package-manager-cache: false`), затем `node scripts/check-links.js`.
 - Проверяются относительные ссылки Markdown и вики-ссылки `[[...]]`. Внешние `http(s)`, `mailto:`,
   `data:` и якоря `#...` пропускаются; инлайновый код в backticks игнорируется.
-- Локальный прогон: **132 ссылки, 0 битых**. Workflow срабатывает на `push`, `pull_request`
+- Локальный прогон: **135 ссылок, 0 битых**. Workflow срабатывает на `push`, `pull_request`
   и вручную (`workflow_dispatch`).
+
+## CI/CD и деплой вики
+
+- `.github/workflows/pages.yml`: `links` → `build` → `deploy`. Сборка делает `node scripts/build-site.js`
+  (30 Markdown-страниц → `_site/`, 32 файла), загрузка артефакта и деплой через
+  `actions/configure-pages@v5`, `actions/upload-pages-artifact@v3`, `actions/deploy-pages@v5`.
+  Все экшены закреплены по SHA; права `pages: write` и `id-token: write` нужны только job `deploy`.
+- Сайт: https://donikgilyadov-a11y.github.io/opencode-wiki/ (GitHub Pages, `build_type: workflow`).
+  Статический генератор выбран вместо Jekyll: в вики нет `index.md` и `_config.yml`.
+- `.github/dependabot.yml` обновляет GitHub Actions раз в месяц одной группой PR.
+- DevKit использует `.github/workflows/ci.yml` (`npm test` + `npm run smoke:ci`), `skills.yml` и
+  ручной `release.yml` (semver, `VERSION`, `CHANGELOG.md`, тег `vX.Y.Z`, GitHub Release).
+  Подробности — в [DevKit](devkit.md).
+
+Локальная проверка перед пушем:
+
+```powershell
+npx.cmd --yes github-actionlint .github\workflows\*.yml
+npx.cmd --yes js-yaml .github\workflows\pages.yml
+node scripts\build-site.js
+```
 
 ## Связи
 

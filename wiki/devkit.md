@@ -45,6 +45,17 @@ cd opencode-devkit
 - `node scripts\oc-check.js --json` — 20 проверок сборки.
 - `node scripts\oc-doctor.js --json` — план авто-врача; `--apply --json` применяет фиксы с бэкапами.
 - Установщик проверен на временных каталогах: 60 скопированных файлов и корректное слияние конфига.
+- `npm run smoke:ci` — 6 проверок плюс 2 SKIP; поднимает админку с фикстурами без сервиса OpenCode.
+
+## CI/CD и релизы
+
+- `.github/workflows/ci.yml` — тесты и smoke на Ubuntu/Node 22 при push/PR в `main` и вручную.
+  `npm install`/`npm ci` не запускаются: lockfile нет, а `install.js` — пользовательский установщик.
+- `.github/workflows/skills.yml` — SkillEvaluator при изменении `skills/**`.
+- `.github/workflows/release.yml` — ручной релиз: semver, `VERSION`, `CHANGELOG.md`, тег `vX.Y.Z`,
+  zip-архив и GitHub Release. Есть `dry_run`.
+- `.github/dependabot.yml` — ежемесячные обновления GitHub Actions и npm одной группой PR.
+- Экшены закреплены по SHA; локальная проверка: `npx.cmd --yes github-actionlint .github\workflows\*.yml`.
 
 ## Связи
 

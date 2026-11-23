@@ -26,8 +26,9 @@
 - OpenCode **v2.3.2**, сервис `http://127.0.0.1:28894`.
 - Локальный комплект: `C:\Users\deda donik\Desktop\opencode-boost\`.
 - Вторая админка: `http://127.0.0.1:8787` (графы — `/graph.html`).
-- Плагины: `opencode-dcp`, `autopilot-tools`, `brain-tools`, `graph-tools`.
-- Граф памяти: 15 узлов, 41 связь.
+- Плагины: 13 активных (7 пакетных + 6 локальных), 13 навыков, 13 команд.
+- Граф памяти: 36 узлов, 60 связей.
+- Опубликованная вики: https://donikgilyadov-a11y.github.io/opencode-wiki/ (Pages из Actions).
 
 ## Ссылки
 
