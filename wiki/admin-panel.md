@@ -11,6 +11,10 @@ C:\Users\deda donik\Desktop\opencode-boost\admin\start.cmd
 node "C:\Users\deda donik\Desktop\opencode-boost\admin\server.js"
 ```
 
+На Рабочем столе есть ярлык **«Вторая админка OpenCode.lnk»** — он запускает тот же `start.cmd`
+и открывает дашборд в браузере. `start.cmd` сначала проверяет порт 8787: если сервер уже слушает,
+он только открывает страницу и не поднимает второй процесс.
+
 Сервер написан на чистом Node.js без зависимостей, слушает только `127.0.0.1`.
 Чтобы не хранить пароль сервиса, он вызывает `opencode api ...` через `execFile`.
 
@@ -28,7 +32,7 @@ node "C:\Users\deda donik\Desktop\opencode-boost\admin\server.js"
 
 - `/api/data` и `/api/graphs` — HTTP 200.
 - `/graph.html` отрисовывает Mermaid в SVG; в браузере подтверждено: items=3, svg=1.
-- Графы: `memory` (15/41), `project-opencode-boost`, `tree-vertikalnoesad`.
+- Графы: `memory` (16/42), `project-opencode-boost`, `tree-vertikalnoesad`.
 
 ## Безопасность
 
