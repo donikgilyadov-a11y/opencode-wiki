@@ -7,6 +7,7 @@
 
 - [opencode-boost](projects/opencode-boost.md) — локальный комплект: мозг, навыки, админка, графы.
 - [opencodeevalution](projects/opencodeevalution.md) — первый GitHub-репозиторий, тест push.
+- [opencode-wiki](projects/opencode-wiki.md) — этот репозиторий: журнал и вики.
 - [Шаблон проекта](projects/_TEMPLATE.md) — скопируй для нового проекта.
 
 ## OpenCode
