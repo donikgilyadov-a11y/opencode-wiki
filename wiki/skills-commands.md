@@ -15,6 +15,7 @@
 | `autopilot` | Многошаговые и межсессионные задачи. См. [автопилот](autonomy.md) |
 | `computer-use` | Управление Windows и браузером. См. [computer use](computer-use.md) |
 | `repo-audit` | Изучить чужой или большой репозиторий без изменений. См. [аудит](repo-audit.md) |
+| `obsidian` | Работа с vault через Local REST API: читать, искать, писать и открывать заметки. См. [Obsidian](obsidian-integration.md) |
 
 ## Глобальные команды
 

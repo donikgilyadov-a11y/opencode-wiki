@@ -7,7 +7,8 @@
 - Obsidian: установлен (`C:\Program Files\Obsidian`), конфиг в `%APPDATA%\Obsidian`.
 - Экспериментальный vault пользователя: `C:\Users\deda donik\Desktop\projects\opencodeObsidian\opencode` (зарегистрирован в `obsidian.json`).
 - Второй мозг уже в формате Obsidian: `~/Desktop/opencode-boost/brain/`, вики-ссылки `[[...]]`, теги `#тег`, дневники; добавлен как второй vault в Obsidian.
-- Community-плагины пока не установлены.
+- Community-плагин **Local REST API 5.5.2** установлен и включён во vault `brain`; Restricted mode снят в GUI пользователем.
+- OpenCode подключён к его MCP через локальный прокси на `127.0.0.1:27125`, инструменты `obsidian.*` работают.
 - Решение: [ADR 0004](../decisions/0004-obsidian-integration.md) в мозге.
 
 ## Фаза 1 — vault без плагинов
@@ -31,7 +32,13 @@
 - навигация: `open_file`, `active_file_get_path`, `vault_move/copy/delete`;
 - события vault через SSE и ресурсы `obsidian://local-rest-api/*`.
 
-В OpenCode это подключается как удалённый MCP-сервер:
+В OpenCode это подключается как удалённый MCP-сервер. Плагин установлен и включён во vault `brain`,
+HTTP-сервер слушает `127.0.0.1:27123`.
+
+Фактическая схема (проверена): OpenCode → локальный прокси `127.0.0.1:27125` → REST/MCP плагина
+`127.0.0.1:27123`. Прокси `~/Desktop/opencode-boost/scripts/obsidian-mcp-proxy.js` (Node, без зависимостей)
+читает ключ из `brain/.obsidian/plugins/obsidian-local-rest-api/data.json` и подставляет заголовок
+`Authorization`. Так секрет не лежит ни в конфиге OpenCode, ни в переменных окружения.
 
 ```jsonc
 {
@@ -40,10 +47,10 @@
     "servers": {
       "obsidian": {
         "type": "remote",
-        "url": "http://127.0.0.1:27123/mcp/",
+        "url": "http://127.0.0.1:27125/mcp/",
         "oauth": false,
-        "headers": { "Authorization": "Bearer {env:OBSIDIAN_API_KEY}" },
-        "protocol": "auto"
+        "protocol": "auto",
+        "codemode": true
       }
     }
   }
@@ -51,8 +58,12 @@
 ```
 
 - Порт `27123` — простой HTTP, включается в настройках плагина; порт `27124` — HTTPS с локально сгенерированным CA.
-- Ключ берётся из **Settings → Local REST API** и хранится только в `OBSIDIAN_API_KEY`, не в конфиге.
+- Порт `27125` — прокси; поднимается командой `Start-Process node ... scripts/obsidian-mcp-proxy.js -WindowStyle Hidden`.
+- Прямой вариант с `headers: { "Authorization": "Bearer {env:OBSIDIAN_API_KEY}" }` не сработал: сервис OpenCode
+  не увидел переменную, заданную через `setx` (401). Прокси решает это без перезапуска Desktop-приложения.
 - Не включать «Allow access to the configuration directory»: `.obsidian/` содержит код плагинов и ключ.
+- В Code Mode доступны 20 инструментов `obsidian.*` (`vault_list`, `search_simple`, `tag_list`, ...);
+  проверено чтением списка файлов и тегов vault.
 
 ## Фаза 3 — OpenCode внутри Obsidian
 
