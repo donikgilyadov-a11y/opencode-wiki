@@ -8,5 +8,6 @@ Architecture Decision Records: почему выбрали именно так. 
 - [0001 — собрать OpenCode Boost](0001-opencode-boost.md)
 - [0002 — графы проекта и памяти](0002-graphs.md)
 - [0003 — долгая автономная работа](0003-autonomy.md)
+- [0004 — интеграция Obsidian](0004-obsidian-integration.md)
 
 Старое решение не переписывай: создай новое и сошлися на него.
