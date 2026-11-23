@@ -11,6 +11,7 @@
 | `autopilot-tools` | local | Цель, шаги, чекпоинты, стоп-условия; хуки `context` и `compaction`. См. [автопилот](autonomy.md) |
 | `brain-tools` | local | `brain.save / search / index` — работа со вторым мозгом |
 | `graph-tools` | local | `graph.project / tree / memory / save` — графы через `graph-core.mjs` |
+| `computer-tools` | local | `computer.info / windows / activate / screenshot / move / click / type / key / hotkey / scroll`. См. [computer use](computer-use.md) |
 
 Локальные плагины лежат в `~/.config/opencode/plugins/<имя>/` и подхватываются автоматически.
 Готовый SDK — `@opencode/plugin@2.4.0` в `~/.config/opencode/node_modules`.
