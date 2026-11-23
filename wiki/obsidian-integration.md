@@ -58,7 +58,7 @@ HTTP-сервер слушает `127.0.0.1:27123`.
 ```
 
 - Порт `27123` — простой HTTP, включается в настройках плагина; порт `27124` — HTTPS с локально сгенерированным CA.
-- Порт `27125` — прокси; поднимается командой `Start-Process node ... scripts/obsidian-mcp-proxy.js -WindowStyle Hidden`.
+- Порт `27125` — прокси. Его держит watchdog `scripts/obsidian-proxy-watchdog.js`: раз в 15 секунд проверяет порт и перезапускает прокси, если он упал. Ярлык `OpenCode Obsidian Proxy.lnk` в `%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup` запускает watchdog при входе в Windows. Текущее состояние видно в админке (`/api/obsidian`) и в самопроверке `oc-check` (проверка «Obsidian MCP мост»). Ручное управление: `node scripts/obsidian-proxy-watchdog.js status|stop`.
 - Прямой вариант с `headers: { "Authorization": "Bearer {env:OBSIDIAN_API_KEY}" }` не сработал: сервис OpenCode
   не увидел переменную, заданную через `setx` (401). Прокси решает это без перезапуска Desktop-приложения.
 - Не включать «Allow access to the configuration directory»: `.obsidian/` содержит код плагинов и ключ.

@@ -33,7 +33,7 @@
 | `/autopilot <цель>` | Поставить цель и начать долгую работу |
 | `/goal <цель>` | Встроенная: продолжать до достижения цели (`pause|resume|clear`) |
 | `/computer <задача>` | Диагностика и выполнение действия с GUI или браузером |
-| `/oc-check` | Самопроверка сборки (19 проверок), отчёт в `brain/reports/`. См. [self-check](self-check.md) |
+| `/oc-check` | Самопроверка сборки (20 проверок), отчёт в `brain/reports/`. См. [self-check](self-check.md) |
 | `/repo-audit <путь>` | Read-only аудит репозитория, отчёт в `brain/reports/`. См. [аудит](repo-audit.md) |
 
 ## От плагинов

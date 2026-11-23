@@ -35,8 +35,8 @@ node scripts/smoke-admin.js
 ```
 
 Скрипт делает только GET-запросы к `http://127.0.0.1:8787` (адрес меняется через `ADMIN_URL`):
-`/`, `/api/data`, `/api/graphs`, `/api/logs?lines=5`, `/api/brain`, `/api/quota`, `/api/oc-check`.
-Последний прогон: **7/7 OK**, `/api/graphs` отдаёт 3 графа, `/api/brain` — 14 MD-файлов,
+`/`, `/api/data`, `/api/graphs`, `/api/logs?lines=5`, `/api/brain`, `/api/quota`, `/api/obsidian`, `/api/oc-check`.
+Последний прогон: **8/8 OK**, `/api/graphs` отдаёт 3 графа, `/api/brain` — 15 MD-файлов,
 `/api/oc-check` — `ok=true`.
 
 ## Проверка в браузере
