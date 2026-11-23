@@ -29,6 +29,21 @@ node "C:\Users\deda donik\Desktop\opencode-boost\scripts\oc-check.js"
 `{date, ok, total, failed, items}`. В дашборде за это отвечает кнопка **«Проверка»** и карточка
 «Самопроверка». Также доступна глобальная команда `/oc-check`.
 
+## Авто-врач
+
+`scripts/oc-doctor.js` строит план типовых фиксов и применяет их с бэкапами:
+
+```powershell
+node "C:\Users\deda donik\Desktop\opencode-boost\scripts\oc-doctor.js" --json
+node "C:\Users\deda donik\Desktop\opencode-boost\scripts\oc-doctor.js" --apply --json
+```
+
+По умолчанию режим только чтения; `--apply` чинит то, что помечено `auto`, и пропускает `manual`.
+Бэкапы — `~/Desktop/opencode-boost/brain/reports/doctor-backups/<время>/`. В OpenCode для этого
+есть `/oc-doctor` (план) и `/oc-doctor-fix` (применение; флаг `--service` разрешает перезапуск сервиса).
+Авто-врач умеет поднимать админку и Obsidian-прокси, создавать недостающие конфиги из примеров DevKit,
+восстанавливать дневник мозга, чинить `name:` навыков и убирать литерал `$ARGUMENTS`.
+
 ## Нюансы реализации
 
 - Парсер JSONC — конечный автомат: комментарии `//` и `/* */` вырезаются только вне строк,
@@ -36,6 +51,6 @@ node "C:\Users\deda donik\Desktop\opencode-boost\scripts\oc-check.js"
 - Плагины читаются из response `/api/plugin` → `data[]`, статус лежит в `state.status`.
 - Папки (навыки, локальные плагины) считаются как directories, а не files.
 
-Последний прогон 2026-11-23: `ok=true`, `total=19`, `failed=0`.
+Последний прогон 2026-11-24: `ok=true`, `total=20`, `failed=0`.
 
 Ссылки: [админка](admin-panel.md) · [навыки и команды](skills-commands.md) · [проект](projects/opencode-boost.md)

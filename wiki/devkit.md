@@ -13,10 +13,10 @@
 | --- | --- |
 | `plugins/` | `brain-tools`, `graph-tools`, `autopilot-tools`, `computer-tools`, `audit-tools` |
 | `skills/` | 9 навыков: second-brain, opencode-tuner, md-examples, admin-panel, graph, autopilot, computer-use, repo-audit, obsidian |
-| `commands/` | 11 глобальных команд |
+| `commands/` | 12 глобальных команд, включая `/oc-doctor` и `/oc-doctor-fix` |
 | `agents/` | `brain-keeper`, `oc-admin` |
 | `admin/` | Вторая админка на `127.0.0.1:8787` |
-| `scripts/` | Мозг, графы, аудит, oc-check, smoke, Obsidian-прокси и watchdog, 13 тестов |
+| `scripts/` | Мозг, графы, аудит, oc-check, oc-doctor, smoke, Obsidian-прокси и watchdog, 18 тестов |
 | `config-examples/` | Примеры `opencode.jsonc`, `cli.json`, уведомлений, DCP, ponytail, INSTRUCTIONS |
 | `brain-template/` | Пустая структура второго мозга |
 
@@ -38,9 +38,10 @@ cd opencode-devkit
 
 ## Проверки
 
-- `npm test` — 13 юнит-тестов (в PowerShell: `& 'C:\Program Files\nodejs\npm.cmd' test`).
+- `npm test` — 18 юнит-тестов (в PowerShell: `& 'C:\Program Files\nodejs\npm.cmd' test`).
 - `node scripts\smoke-admin.js` — 8 проверок админки.
 - `node scripts\oc-check.js --json` — 20 проверок сборки.
+- `node scripts\oc-doctor.js --json` — план авто-врача; `--apply --json` применяет фиксы с бэкапами.
 - Установщик проверен на временных каталогах: 60 скопированных файлов и корректное слияние конфига.
 
 ## Связи
