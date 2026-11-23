@@ -52,12 +52,13 @@ for (const file of allMd) {
   }
 
   for (const match of text.matchAll(/\[\[([^\]]+)\]\]/g)) {
-    const name = match[1].split("|")[0].trim().toLowerCase();
+    const rawName = match[1].split("|")[0].trim();
+    const name = rawName.toLowerCase();
     if (!name) continue;
     checked++;
     let found;
-    if (name.includes("/") || name.startsWith(".")) {
-      const base = path.resolve(dir, name);
+    if (rawName.includes("/") || rawName.startsWith(".")) {
+      const base = path.resolve(dir, rawName);
       found = existsTarget(base);
     } else {
       found = allMd.some((f) => {
