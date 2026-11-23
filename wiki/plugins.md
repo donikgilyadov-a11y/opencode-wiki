@@ -2,12 +2,13 @@
 
 ## Установленные и активные
 
-Проверка: `opencode api get /api/plugin` — все семь в статусе `active`.
+Проверка: `opencode api get /api/plugin` — все восемь в статусе `active`.
 
 | Плагин | Тип | Что даёт |
 | --- | --- | --- |
 | `@tarquinen/opencode-dcp@latest` (3.2.1) | package | Динамическая очистка контекста: `compress`, дедупликация, purge ошибок. Конфиг `~/.config/opencode/dcp.jsonc` |
 | `@mohak34/opencode-notifier@latest` (1.1.3) | package | Звуки и всплывающие уведомления о разрешениях, вопросах, завершении и ошибках. Конфиг `~/.config/opencode/opencode-notifier.json` |
+| `opencode-auto-resume@latest` (1.2.9) | package | Автовосстановление зависших сессий, tool-call-as-text, циклов, сабагентов и стриминговых ошибок. id `auto-resume.v2`, команды `/auto-resume off|on|status` |
 | `autopilot-tools` | local | Цель, шаги, чекпоинты, стоп-условия; хуки `context` и `compaction`. См. [автопилот](autonomy.md) |
 | `brain-tools` | local | `brain.save / search / index` — работа со вторым мозгом |
 | `graph-tools` | local | `graph.project / tree / memory / save` — графы через `graph-core.mjs` |
@@ -29,6 +30,26 @@
 команды плагина выполняют, но сами уведомления не показывают. На Windows свои звуки — только `.wav`
 по полному пути; Focus Assist может скрыть тосты; `OPENCODE_NOTIFIER_DEBUG=1` пишет лог в stderr.
 Чтобы проверить: вызвать разрешение или вопрос, переключить фокус на другое окно.
+
+### Авто-восстановление сессий
+
+`opencode-auto-resume` работает тихо: на V2 нет баннера запуска, действия видны только в выводе
+серверного процесса. Он не прерывает выполнение инструментов, уважает ESC и не трогает сессию,
+ждащую ответа пользователя. Основные пути восстановления: тихий стрим, «инструмент как текст»,
+цикл галлюцинаций, мёртвый/застрявший сабагент, обрыв стриминга провайдера.
+
+По умолчанию: таймаут тишины 180 с, `maxRetries: 3`, лимит продолжающих подсказок 9 для онлайн-
+и 20 для локальных моделей. Команды `/auto-resume off`, `/auto-resume on`, `/auto-resume status`
+временно ставят восстановление на паузу (маркер `~/.config/opencode/auto-resume.paused`).
+Если нужны нестандартные параметры, строковую запись в `plugins` надо заменить объектной:
+
+```jsonc
+{
+  "plugins": [
+    { "package": "opencode-auto-resume", "options": { "chunkTimeoutMs": 180000, "maxRetries": 3 } }
+  ]
+}
+```
 
 ## С конфликтными зависимостями — не ставили
 
