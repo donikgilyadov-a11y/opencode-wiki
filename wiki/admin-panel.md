@@ -27,12 +27,26 @@ node "C:\Users\deda donik\Desktop\opencode-boost\admin\server.js"
 | `/api/data` | Сводка данных сервиса |
 | `/api/graphs` | Список графов из `brain/graphs/` |
 | `/api/call` | Ограниченный прокси: GET + POST `/api/location/reload` |
+| `/api/logs?lines=80` | Последние строки `opencode.log` с маскировкой секретов |
+| `/api/brain` | Индекс `MEMORY.md` и количество MD-файлов мозга |
+| `/api/quota` | Наличие файла настроек квот (содержимое не показывается) |
+| `/api/oc-check` | Полный отчёт самопроверки |
+
+## Вкладки «Админка 2.0»
+
+В шапке появились якоря **Обзор / Плагины / Безопасность / Логи / Проверки**, кнопка
+«Автообновление: вкл/выкл» и кнопка «Проверка». На вкладках показываются детали плагинов
+(версия и статус), наличие `cc-safety-net`/`envsitter-guard`/`auto-resume`/`ponytail`,
+настройки квот, индекс мозга, хвост лога и полный список проверок. Лог маскирует
+`authorization`, `api_key`, `token`, `password`, `secret`, а также ключи вида `gh_` и `sk-`.
 
 ## Проверено
 
 - `/api/data` и `/api/graphs` — HTTP 200.
 - `/graph.html` отрисовывает Mermaid в SVG; в браузере подтверждено: items=3, svg=1.
-- Графы: `memory` (16/42), `project-opencode-boost`, `tree-vertikalnoesad`.
+- Графы: `memory` (23/47), `project-opencode-boost`, `tree-vertikalnoesad`.
+- После обновления 2.0 во встроенном браузере: ошибок консоли нет, вкладки и log-панель загружаются,
+  кнопка «Проверка» показывает `19/19 OK`.
 
 ## Безопасность
 
