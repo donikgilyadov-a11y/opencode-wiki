@@ -9,6 +9,7 @@
 - Второй мозг уже в формате Obsidian: `~/Desktop/opencode-boost/brain/`, вики-ссылки `[[...]]`, теги `#тег`, дневники; добавлен как второй vault в Obsidian.
 - Community-плагин **Local REST API 5.5.2** установлен и включён во vault `brain`; Restricted mode снят в GUI пользователем.
 - OpenCode подключён к его MCP через локальный прокси на `127.0.0.1:27125`, инструменты `obsidian.*` работают.
+- Community-плагин **Another OpenCode for Obsidian 0.6.0** установлен и включён во vault `brain`; OpenCode открывается прямо в Obsidian.
 - Решение: [ADR 0004](../decisions/0004-obsidian-integration.md) в мозге.
 
 ## Фаза 1 — vault без плагинов
@@ -65,14 +66,25 @@ HTTP-сервер слушает `127.0.0.1:27123`.
 - В Code Mode доступны 20 инструментов `obsidian.*` (`vault_list`, `search_simple`, `tag_list`, ...);
   проверено чтением списка файлов и тегов vault.
 
-## Фаза 3 — OpenCode внутри Obsidian
+## Фаза 3 — OpenCode внутри Obsidian (выполнено)
 
-Рекомендуемый плагин: `jensenojs/another-opencode-for-obsidian` **v0.6.0**.
+Установлен `jensenojs/another-opencode-for-obsidian` **v0.6.0** ручной копией файлов релиза в
+`<vault>/.obsidian/plugins/another-opencode-for-obsidian/` (`main.js`, `manifest.json`, `styles.css`);
+плагин добавлен в `community-plugins.json`, Obsidian перезагружен командой `app:reload` через Local REST API.
 
 - Только V2 API (`/api/info`, `/api/session`, `/api/event`), требует OpenCode ≥ 2.1.3 (сейчас 2.3.2).
-- Не запускает и не останавливает сервис: подключается к уже существующему `service*.json`.
-- Умеет боковую панель и глубокий режим, тему из Obsidian, передачу выбранного текста и открытых заметок как вложений в запрос, навигацию по путям и вики-ссылкам из OpenCode в Obsidian.
-- Ставится через BRAT (`jensenojs/another-opencode-for-obsidian`) или ручной копией файлов релиза.
+- Не запускает и не останавливает сервис: подключается к уже существующему
+  `%USERPROFILE%\.local\state\opencode\service.json`. Плагин оболочки OpenCode не трогает, с ним работают
+  и MCP-мост, и админка.
+- Подтверждено через `~/.local/state/another-opencode-for-obsidian/status.json`:
+  `serviceState: attached`, `service.url: http://127.0.0.1:28894`, `version: 2.3.2`,
+  `projectDirectory: <vault brain>`, событийный поток `/api/event` подключён.
+- В палитре команд появились 6 команд плагина: открыть/переключить панель, глубокий режим, копировать
+  диагностику, добавить выделение или текущую заметку в контекст запроса.
+- Открыть панель можно из палитры команд или горячими клавишами; тема Web UI берётся из Obsidian,
+  пути и вики-ссылки из OpenCode открывают существующие заметки.
+- Диагностика и логи: `~/.local/state/another-opencode-for-obsidian/status.json` и
+  `another-opencode-for-obsidian.log`; копирование диагностики не передаёт текст заметок и пароль сервиса.
 
 Не выбраны: `mtymek/opencode-obsidian` (Bun + `--cors app://obsidian.md` + кастомная команда), `windyboy/opencode-obsidian` (нет явного подтверждения V2).
 

@@ -10,7 +10,7 @@
 
 1. **Vault без плагинов:** открыть `C:\Users\deda donik\Desktop\opencode-boost\brain` как хранилище Obsidian.
 2. **Живой мост:** поставить `obsidian-local-rest-api` 5.5.2 и подключить его встроенный MCP к OpenCode как remote-сервер `obsidian` (`oauth: false`, ключ только в `OBSIDIAN_API_KEY`), не открывая доступ к `.obsidian/`.
-3. **OpenCode внутри Obsidian (опционально):** `jensenojs/another-opencode-for-obsidian` v0.6.0 — только V2 API, подключается к уже запущенному сервису.
+3. **OpenCode внутри Obsidian (выполнено):** `jensenojs/another-opencode-for-obsidian` v0.6.0 — только V2 API, подключается к уже запущенному сервису. Установлен во vault `brain`, `serviceState=attached`, OpenCode 2.3.2, 6 команд в палитре Obsidian.
 4. **Экспорт сессий:** не ставить `opencode-obsidian-export` из npm (последняя опубликованная версия 1.1.0 с peer V1); при необходимости написать локальный плагин.
 
 Подробности: [интеграция Obsidian](../wiki/obsidian-integration.md).
