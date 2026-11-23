@@ -67,7 +67,7 @@ node scripts/smoke-admin.js
   затем `node scripts/check-links.js`.
 - Проверяются относительные ссылки Markdown и вики-ссылки `[[...]]`. Внешние `http(s)`, `mailto:`,
   `data:` и якоря `#...` пропускаются; инлайновый код в backticks игнорируется.
-- Локальный прогон: **129 ссылок, 0 битых**. Workflow срабатывает на `push`, `pull_request`
+- Локальный прогон: **132 ссылки, 0 битых**. Workflow срабатывает на `push`, `pull_request`
   и вручную (`workflow_dispatch`).
 
 ## Связи

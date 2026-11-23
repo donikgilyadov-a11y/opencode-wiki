@@ -17,6 +17,9 @@
 | `repo-audit` | Изучить чужой или большой репозиторий без изменений. См. [аудит](repo-audit.md) |
 | `obsidian` | Работа с vault через Local REST API: читать, искать, писать и открывать заметки. См. [Obsidian](obsidian-integration.md) |
 | `session-audit` | Разбор логов сессий: ошибки, циклы, перезапуски CLI. См. [аудит сессий](session-audit.md) |
+| `react-expert` | React 18/19, Server Components, хуки, миграция с классов, состояние и производительность |
+| `typescript-pro` | Продвинутые типы TypeScript, type guards, utility types, брендированные типы, tRPC |
+| `react-best-practices` | 47 правил производительности React от Vercel (адаптация для Vite) |
 
 ## Глобальные команды
 
@@ -41,14 +44,14 @@
 
 ## От плагинов
 
-Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **18 навыков** и **36 команд** (включая встроенные).
+Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **23 навыка** и **36 команд** (включая встроенные).
 
 - `opencode-v2-ponytail-scoped` добавляет 6 навыков и 6 команд: `/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`. По умолчанию выключен: `~/.config/opencode/ponytail-scoped.json` содержит `{"default":"off","agents":{}}`. См. [плагины](plugins.md).
 - `@slkiser/opencode-quota` добавляет 4 команды: `/quota`, `/quota_usage [range]`, `/quota_status`, `/quota_settings`, плюс инструменты `quota_status`, `quota_settings_get/set`, `quota_provider_add/remove/test`.
 - `envsitter-guard` добавляет 15 инструментов `envsitter_*` для безопасной работы с `.env` без вывода секретов.
 - `cc-safety-net` добавляет команду `/cc-safety-net` и защитные хуки; `opencode-auto-resume` — `/auto-resume off|on|status`.
 
-Итого собственных файлов: 10 навыков в `~/Desktop/opencode-boost/skills/` и 13 команд в `~/.config/opencode/commands/`.
+Итого собственных файлов: 13 навыков в `~/Desktop/opencode-boost/skills/` и 13 команд в `~/.config/opencode/commands/`.
 
 ## Глобальные агенты
 

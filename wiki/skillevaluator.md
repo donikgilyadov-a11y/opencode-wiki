@@ -4,7 +4,7 @@
 
 ## Зачем нам это
 
-У [DevKit](devkit.md) девять навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
+У [DevKit](devkit.md) тринадцать навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
 
 ## Уровни проверки
 
@@ -33,14 +33,26 @@ Expand-Archive uv.zip -DestinationPath uv
 
 ## Результат проверки DevKit
 
-- harness-check по всем девяти навыкам: **9 из 9 загружаются** в OpenCode (профиль 1.19.5 от 2026-11-01). Единственное замечание `OC-RELOAD` — список навыков кэшируется при старте.
-- `validate ./skills --tiers 1 --checks schema,quality --min-score 70`: **все 9 прошли**, оценки в диапазоне B (83–86 баллов), выходной код 0. Publication status остаётся `incomplete`, потому что scanners и LLM не запускались.
+- harness-check по всем тринадцати навыкам: **13 из 13 загружаются** в OpenCode (профиль 1.19.5 от 2026-11-01). Единственное замечание `OC-RELOAD` — список навыков кэшируется при старте.
+- `validate ./skills --tiers 1 --checks schema,quality --min-score 70`: **все 13 прошли**, оценки B и A (81.8–92.0 баллов), выходной код 0. Publication status остаётся `incomplete`, потому что scanners и LLM не запускались.
 - Исправлено до проверки: пять навыков имели `name` с пробелами вместо kebab-case (`admin-panel`, `graph`, `md-examples`, `opencode-tuner`, `second-brain`), а в `md-examples` буквальное `$ARGUMENTS` в примере понижало вердикт до `degraded`. Исправления внесены и в DevKit, и в рабочую копию `opencode-boost/skills`.
 - Оставшиеся advisories — стилистические (`## Purpose`, `## Examples`, `metadata.author`, `metadata.tags`, windows-пути); на гейт не влияют.
 
 ## CI
 
 В DevKit добавлен workflow `.github/workflows/skills.yml`: при изменении `skills/**` он ставит SkillEvaluator через `setup-uv`, запускает advisory `harness-check` и блокирующий `validate`, сохраняет JSON/Markdown-отчёты и `harness.json` как артефакт. Действия закреплены по SHA по образцу официальных шаблонов NVIDIA.
+
+## Фронтенд-навыки
+
+Добавлены три внешних навыка для связки TypeScript + React: `react-expert`, `typescript-pro`, `react-best-practices`. Их прогоняли отдельно до установки: `harness-check` — 3 из 3 загружаются, `validate --tiers 1 --checks schema,quality --min-score 70` — 3 из 3 прошли с оценками A (90.8–92.0). После копирования в DevKit повторная проверка всего каталога показала 13 из 13.
+
+Источники зафиксированы по коммитам:
+
+- `react-expert` — [farmage/opencode-skills](https://github.com/farmage/opencode-skills/tree/main/skills/react-expert), `2ec14733c1aaa6f98c4b12ecd078ff7c0454710b`, MIT.
+- `typescript-pro` — [tektite-io/opencode-skills](https://github.com/tektite-io/opencode-skills/tree/main/skills/typescript-pro), `2ec14733c1aaa6f98c4b12ecd078ff7c0454710b`, MIT.
+- `react-best-practices` — [bobum/opencode-skills](https://github.com/bobum/opencode-skills/tree/master/.opencode/skills/react-best-practices), `4bd8ab3bb9ba80af2c7f3c5db50615a1240b0aaf`, MIT; адаптация `vercel-labs/agent-skills`.
+
+Полный список атрибуций лежит в `skills/FRONTEND-ATTRIBUTION.md` репозитория DevKit. Репозиторий `FrancoStino/opencode-skills-collection` не использовался: все обещанные навыки там ведут к одному файлу.
 
 ## Ограничения
 

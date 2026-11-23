@@ -12,13 +12,15 @@
 | Папка | Содержимое |
 | --- | --- |
 | `plugins/` | `brain-tools`, `graph-tools`, `autopilot-tools`, `computer-tools`, `audit-tools`, `session-audit-tools` |
-| `skills/` | 10 навыков: second-brain, opencode-tuner, md-examples, admin-panel, graph, autopilot, computer-use, repo-audit, obsidian, session-audit |
+| `skills/` | 13 навыков: second-brain, opencode-tuner, md-examples, admin-panel, graph, autopilot, computer-use, repo-audit, obsidian, session-audit, react-expert, typescript-pro, react-best-practices |
 | `commands/` | 13 глобальных команд, включая `/oc-doctor`, `/oc-doctor-fix` и `/session-audit` |
 | `agents/` | `brain-keeper`, `oc-admin` |
 | `admin/` | Вторая админка на `127.0.0.1:8787` |
 | `scripts/` | Мозг, графы, аудит, аудит сессий, oc-check, oc-doctor, smoke, Obsidian-прокси и watchdog, 23 теста |
 | `config-examples/` | Примеры `opencode.jsonc`, `cli.json`, уведомлений, DCP, ponytail, INSTRUCTIONS |
 | `brain-template/` | Пустая структура второго мозга |
+
+Три фронтенд-навыка (`react-expert`, `typescript-pro`, `react-best-practices`) пришли из публичных MIT-репозиториев. Источники и зафиксированные коммиты записаны в `skills/FRONTEND-ATTRIBUTION.md`; все 13 навыков проходят гейт SkillEvaluator. См. [SkillEvaluator](skillevaluator.md).
 
 ## Установка
 
