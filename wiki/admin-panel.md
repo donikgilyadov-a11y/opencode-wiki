@@ -47,6 +47,9 @@ node "C:\Users\deda donik\Desktop\opencode-boost\admin\server.js"
 - Графы: `memory` (23/47), `project-opencode-boost`, `tree-vertikalnoesad`.
 - После обновления 2.0 во встроенном браузере: ошибок консоли нет, вкладки и log-панель загружаются,
   кнопка «Проверка» показывает `19/19 OK`.
+- Дымовая проверка `scripts/smoke-admin.js`: 7/7 OK. Playwright повторно подтвердил 0 ошибок консоли
+  после того, как в обе HTML-страницы добавили data-URI SVG-иконку (убрали `404 /favicon.ico`).
+  Подробнее — [тесты и CI](testing-ci.md).
 
 ## Безопасность
 

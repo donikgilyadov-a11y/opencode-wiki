@@ -19,6 +19,7 @@
 - [Админка](admin-panel.md) — локальный дашборд на 8787.
 - [Автопилот](autonomy.md) — долгая автономная работа.
 - [Самопроверка](self-check.md) — `oc-check`: 19 проверок сборки, отчёты и кнопка в админке.
+- [Тесты и CI](testing-ci.md) — `node:test`, дымовая проверка админки, workflow проверки ссылок.
 - [Аудит репозиториев](repo-audit.md) — read-only инструменты `audit.quick` / `audit.repo`.
 - [Computer use и browser use](computer-use.md) — управление Windows и веб-страницами.
 

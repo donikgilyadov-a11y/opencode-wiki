@@ -18,7 +18,7 @@
 | `skills/` | Навыки: `second-brain`, `opencode-tuner`, `md-examples`, `admin-panel`, `graph`, `autopilot`, `computer-use`, `repo-audit` |
 | `admin/` | Локальная админка на `127.0.0.1:8787`: `server.js`, `index.html`, `graph.html`, `start.cmd` |
 | `md-examples/` | Рабочие шаблоны: `AGENTS.md`, `SKILL.md`, `review.md`, `reviewer.md`, `opencode.jsonc` |
-| `scripts/` | CLI `brain.js`, `graph.js`, `oc-check.js`, `repo-audit.js` и ядра `graph-core.mjs`, `audit-core.mjs` |
+| `scripts/` | CLI `brain.js`, `graph.js`, `oc-check.js`, `repo-audit.js`, `smoke-admin.js`, ядра `graph-core.mjs`, `audit-core.mjs`, юнит-тесты в `scripts/tests/`, `package.json` |
 
 ## Глобальная интеграция
 
@@ -46,8 +46,10 @@ node "C:\Users\deda donik\Desktop\opencode-boost\scripts\graph.js" memory
 - Админка `/api/data` и `/api/graphs` — HTTP 200; `/graph.html` рисует Mermaid SVG.
 - Граф памяти: 15 узлов, 41 связь.
 - Сканер посторонних символов: `SUSPECT_LINES=0`.
+- Юнит-тесты: 13/13; дымовая проверка админки: 7/7; проверка ссылок вики: 79/0.
+  См. [тесты и CI](../testing-ci.md).
 
 ## Ссылки
 
-- [Второй мозг](../second-brain.md) · [Админка](../admin-panel.md) · [Автопилот](../autonomy.md)
+- [Второй мозг](../second-brain.md) · [Админка](../admin-panel.md) · [Автопилот](../autonomy.md) · [Тесты и CI](../testing-ci.md)
 - [Решение 0001](../../decisions/0001-opencode-boost.md) · [Журнал](../../journal/2026-11-23.md)
