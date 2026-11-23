@@ -35,13 +35,19 @@ brain/autonomy/
 
 ## Цикл работы
 
-1. `/autopilot <цель>` или `autopilot.start(...)`.
-2. Работать маленькими шагами, после каждого — `autopilot.progress`.
-3. Важные факты — `brain.save`; рубежи — `autopilot.checkpoint`.
-4. Достигнуто `stopWhen` — `autopilot.stop(..., success: true)`.
-5. Лимит шагов или блокер — `autopilot.stop(..., success: false)` и доложить пользователю.
+1. Перед стартом `quota_status()` — отметить модель и доступность провайдеров.
+2. `/autopilot <цель>` или `autopilot.start(goal, maxSteps, stopWhen)`.
+3. Работать маленькими шагами, после каждого — `autopilot.progress`.
+4. Важные факты — `brain.save`; рубежи — `autopilot.checkpoint`.
+5. Каждые 5 шагов — `quota_status()`; при лимите/бюджете `autopilot.stop(reason: "quota/budget", success: false)`.
+6. Достигнуто `stopWhen` — `autopilot.stop(..., success: true)`, итог — `brain.save(..., long: true)`.
+7. Лимит шагов или блокер — `autopilot.stop(..., success: false)` и доложить пользователю.
+8. В конце долгой сессии — `/brain-digest` для короткого дайджеста дня.
 
-## Связь с DCP
+## Связь с DCP и квотами
 
 Плагин `@tarquinen/opencode-dcp` даёт инструмент `compress`: сжимай завершённые старые куски
-диалога, чтобы длинная работа не съедала контекст. Чекпоинты автопилота при этом сохраняют цель.
+диалога, чтобы длинная работа не съедала контекст. Перед сжатием вызови
+`autopilot.checkpoint("перед сжатием")` — цель сохранится благодаря `context`-хуку.
+Плагин `@slkiser/opencode-quota` работает как бюджетный предохранитель: `quota_status()`
+показывается перед стартом и каждые 5 шагов, при исчерпании лимита автопилот останавливается.

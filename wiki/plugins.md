@@ -14,7 +14,7 @@
 | `@slkiser/opencode-quota@latest` (6.3.0) | package | Лимиты, расход и цены в TUI/Desktop: `/quota`, `/quota_usage`, `/quota_status`, `/quota_settings` |
 | `opencode-v2-ponytail-scoped@latest` (0.1.0) | package | Правила «минимум кода» для выбранных агентов; 6 навыков и 6 команд `ponytail-*`. По умолчанию выключен |
 | `autopilot-tools` | local | Цель, шаги, чекпоинты, стоп-условия; хуки `context` и `compaction`. См. [автопилот](autonomy.md) |
-| `brain-tools` | local | `brain.save / search / index` — работа со вторым мозгом |
+| `brain-tools` | local | `brain.save / search / index / tags / links` — работа со вторым мозгом, поиск по тегам и вики-ссылкам |
 | `graph-tools` | local | `graph.project / tree / memory / save` — графы через `graph-core.mjs` |
 | `computer-tools` | local | `computer.info / windows / activate / screenshot / move / click / type / key / hotkey / scroll`. См. [computer use](computer-use.md) |
 | `audit-tools` | local | `audit.quick / audit.repo` — аудит чужих репозиториев только для чтения. См. [репозиторий аудит](repo-audit.md) |
