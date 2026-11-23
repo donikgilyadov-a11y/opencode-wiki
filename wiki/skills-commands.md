@@ -16,6 +16,7 @@
 | `computer-use` | Управление Windows и браузером. См. [computer use](computer-use.md) |
 | `repo-audit` | Изучить чужой или большой репозиторий без изменений. См. [аудит](repo-audit.md) |
 | `obsidian` | Работа с vault через Local REST API: читать, искать, писать и открывать заметки. См. [Obsidian](obsidian-integration.md) |
+| `session-audit` | Разбор логов сессий: ошибки, циклы, перезапуски CLI. См. [аудит сессий](session-audit.md) |
 
 ## Глобальные команды
 
@@ -25,7 +26,8 @@
 | --- | --- |
 | `/brain` | Работа с памятью |
 | `/brain-digest` | Короткий дайджест дневника по темам; те же возможности дают `brain.js tags/links/digest` и инструменты `brain.tags/links` |
-| `/oc-doctor` | Диагностика OpenCode |
+| `/oc-doctor` | Диагностика OpenCode: план безопасных исправлений |
+| `/oc-doctor-fix` | Применить безопасные исправления с бэкапами. См. [самопроверку](self-check.md) |
 | `/oc-audit` | Аудит конфигурации |
 | `/md-new` | Новый MD-конфиг по шаблону |
 | `/graph-memory` | Перестроить граф памяти |
@@ -35,17 +37,18 @@
 | `/computer <задача>` | Диагностика и выполнение действия с GUI или браузером |
 | `/oc-check` | Самопроверка сборки (20 проверок), отчёт в `brain/reports/`. См. [self-check](self-check.md) |
 | `/repo-audit <путь>` | Read-only аудит репозитория, отчёт в `brain/reports/`. См. [аудит](repo-audit.md) |
+| `/session-audit` | Read-only аудит логов сессий, отчёт в `brain/reports/`. См. [аудит сессий](session-audit.md) |
 
 ## От плагинов
 
-Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **17 навыков** и **34 команды** (включая встроенные).
+Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **18 навыков** и **36 команд** (включая встроенные).
 
 - `opencode-v2-ponytail-scoped` добавляет 6 навыков и 6 команд: `/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`. По умолчанию выключен: `~/.config/opencode/ponytail-scoped.json` содержит `{"default":"off","agents":{}}`. См. [плагины](plugins.md).
 - `@slkiser/opencode-quota` добавляет 4 команды: `/quota`, `/quota_usage [range]`, `/quota_status`, `/quota_settings`, плюс инструменты `quota_status`, `quota_settings_get/set`, `quota_provider_add/remove/test`.
 - `envsitter-guard` добавляет 15 инструментов `envsitter_*` для безопасной работы с `.env` без вывода секретов.
 - `cc-safety-net` добавляет команду `/cc-safety-net` и защитные хуки; `opencode-auto-resume` — `/auto-resume off|on|status`.
 
-Итого собственных файлов: 8 навыков в `~/Desktop/opencode-boost/skills/` и 10 команд в `~/.config/opencode/commands/`.
+Итого собственных файлов: 10 навыков в `~/Desktop/opencode-boost/skills/` и 13 команд в `~/.config/opencode/commands/`.
 
 ## Глобальные агенты
 

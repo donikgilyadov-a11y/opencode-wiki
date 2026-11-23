@@ -14,7 +14,7 @@ node --test scripts/tests/*.test.js scripts/tests/*.test.mjs
 ```
 
 `package.json` содержит именно glob-форму: Node 24 не принимает каталог `scripts/tests`
-как аргумент `--test`. Сейчас **18 тестов**, все проходят:
+как аргумент `--test`. Сейчас **23 теста**, все проходят:
 
 | Файл | Что проверяет |
 | --- | --- |
@@ -23,11 +23,14 @@ node --test scripts/tests/*.test.js scripts/tests/*.test.mjs
 | `scripts/tests/audit.test.mjs` | `auditRepo`, `renderReport`, `saveReport`; секреты сохраняются только как `(значение скрыто)` |
 | `scripts/tests/oc-check.test.js` | `readJsonc` (комментарии внутри URL, битый JSON), `count` |
 | `scripts/tests/doctor.test.js` | `slug`, `parseFrontmatter`, `replaceTokens`, `writeText` с бэкапом, `skillFixes` на временных навыках |
+| `scripts/tests/session-audit.test.js` | `parseLine`, `normalize`, `redact`, `analyze` (паттерны/циклы/CLI), `saveReport` без секретов |
 
 Для тестов `brain.js` научился читать `OPENCODE_BRAIN`, а `oc-check.js` экспортирует
 вспомогательные функции и не запускает `main()` при импорте. `oc-doctor.js` экспортирует
 `slug`, `parseFrontmatter`, `replaceTokens`, `skillFixes`, `writeText`, `backupFile`,
 `buildActions` и `main`; каталог бэкапов можно переопределить через `OPENCODE_DOCTOR_BACKUP_ROOT`.
+`session-audit.js` экспортирует `parseLine`, `redact`, `normalize`, `analyze`, `renderReport`,
+`saveReport` и `RULES`; путь лога и мозга можно переопределить флагами `--log=` и `--brain=`.
 
 Отдельно проверен режим применения авто-врача: при здоровой системе `--apply --json` не создаёт
 действий и возвращает перепроверку `oc-check` `ok=true, total=20, failed=0`. Команды
@@ -64,7 +67,7 @@ node scripts/smoke-admin.js
   затем `node scripts/check-links.js`.
 - Проверяются относительные ссылки Markdown и вики-ссылки `[[...]]`. Внешние `http(s)`, `mailto:`,
   `data:` и якоря `#...` пропускаются; инлайновый код в backticks игнорируется.
-- Локальный прогон: **116 ссылок, 0 битых**. Workflow срабатывает на `push`, `pull_request`
+- Локальный прогон: **129 ссылок, 0 битых**. Workflow срабатывает на `push`, `pull_request`
   и вручную (`workflow_dispatch`).
 
 ## Связи

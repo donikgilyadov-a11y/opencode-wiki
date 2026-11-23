@@ -11,12 +11,12 @@
 
 | Папка | Содержимое |
 | --- | --- |
-| `plugins/` | `brain-tools`, `graph-tools`, `autopilot-tools`, `computer-tools`, `audit-tools` |
-| `skills/` | 9 навыков: second-brain, opencode-tuner, md-examples, admin-panel, graph, autopilot, computer-use, repo-audit, obsidian |
-| `commands/` | 12 глобальных команд, включая `/oc-doctor` и `/oc-doctor-fix` |
+| `plugins/` | `brain-tools`, `graph-tools`, `autopilot-tools`, `computer-tools`, `audit-tools`, `session-audit-tools` |
+| `skills/` | 10 навыков: second-brain, opencode-tuner, md-examples, admin-panel, graph, autopilot, computer-use, repo-audit, obsidian, session-audit |
+| `commands/` | 13 глобальных команд, включая `/oc-doctor`, `/oc-doctor-fix` и `/session-audit` |
 | `agents/` | `brain-keeper`, `oc-admin` |
 | `admin/` | Вторая админка на `127.0.0.1:8787` |
-| `scripts/` | Мозг, графы, аудит, oc-check, oc-doctor, smoke, Obsidian-прокси и watchdog, 18 тестов |
+| `scripts/` | Мозг, графы, аудит, аудит сессий, oc-check, oc-doctor, smoke, Obsidian-прокси и watchdog, 23 теста |
 | `config-examples/` | Примеры `opencode.jsonc`, `cli.json`, уведомлений, DCP, ponytail, INSTRUCTIONS |
 | `brain-template/` | Пустая структура второго мозга |
 
@@ -38,7 +38,7 @@ cd opencode-devkit
 
 ## Проверки
 
-- `npm test` — 18 юнит-тестов (в PowerShell: `& 'C:\Program Files\nodejs\npm.cmd' test`).
+- `npm test` — 23 юнит-теста (в PowerShell: `& 'C:\Program Files\nodejs\npm.cmd' test`).
 - `node scripts\smoke-admin.js` — 8 проверок админки.
 - `node scripts\oc-check.js --json` — 20 проверок сборки.
 - `node scripts\oc-doctor.js --json` — план авто-врача; `--apply --json` применяет фиксы с бэкапами.
@@ -46,4 +46,4 @@ cd opencode-devkit
 
 ## Связи
 
-- [Плагины](plugins.md) · [Навыки и команды](skills-commands.md) · [Админка](admin-panel.md) · [Тесты и CI](testing-ci.md) · [Obsidian](obsidian-integration.md)
+- [Плагины](plugins.md) · [Навыки и команды](skills-commands.md) · [Админка](admin-panel.md) · [Тесты и CI](testing-ci.md) · [Аудит сессий](session-audit.md) · [Obsidian](obsidian-integration.md)

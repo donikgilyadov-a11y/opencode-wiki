@@ -25,6 +25,7 @@
 - [Интеграция Obsidian](obsidian-integration.md) — план: vault из brain, Local REST API + MCP, OpenCode внутри Obsidian.
 - [DevKit](devkit.md) — публичный набор расширений с установщиком для переноса на другой ПК.
 - [SkillEvaluator](skillevaluator.md) — проверка навыков: схема, качество и совместимость с OpenCode.
+- [Аудит сессий](session-audit.md) — ошибки, циклы и перезапуски CLI в логах, отчёт в мозг.
 
 ## Как обновлять
 

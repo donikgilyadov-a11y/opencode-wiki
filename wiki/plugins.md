@@ -2,7 +2,7 @@
 
 ## Установленные и активные
 
-Проверка: `opencode api get /api/plugin` — все двенадцать в статусе `active`.
+Проверка: `opencode api get /api/plugin` — все тринадцать в статусе `active`.
 
 | Плагин | Тип | Что даёт |
 | --- | --- | --- |
@@ -18,6 +18,7 @@
 | `graph-tools` | local | `graph.project / tree / memory / save` — графы через `graph-core.mjs` |
 | `computer-tools` | local | `computer.info / windows / activate / screenshot / move / click / type / key / hotkey / scroll`. См. [computer use](computer-use.md) |
 | `audit-tools` | local | `audit.quick / audit.repo` — аудит чужих репозиториев только для чтения. См. [репозиторий аудит](repo-audit.md) |
+| `session-audit-tools` | local | `sessionaudit.scan / patterns / report` — аудит логов сессий, отчёты в `brain/reports/`. См. [аудит сессий](session-audit.md) |
 
 Локальные плагины лежат в `~/.config/opencode/plugins/<имя>/` и подхватываются автоматически.
 Готовый SDK — `@opencode/plugin@2.4.0` в `~/.config/opencode/node_modules`.
