@@ -15,10 +15,10 @@
 | Папка | Назначение |
 | --- | --- |
 | `brain/` | Второй мозг: индекс, долгосрочные факты, дневник, знания, ADR, карточки проектов, графы, состояние автопилота |
-| `skills/` | Навыки: `second-brain`, `opencode-tuner`, `md-examples`, `admin-panel`, `graph`, `autopilot` |
+| `skills/` | Навыки: `second-brain`, `opencode-tuner`, `md-examples`, `admin-panel`, `graph`, `autopilot`, `computer-use` |
 | `admin/` | Локальная админка на `127.0.0.1:8787`: `server.js`, `index.html`, `graph.html`, `start.cmd` |
 | `md-examples/` | Рабочие шаблоны: `AGENTS.md`, `SKILL.md`, `review.md`, `reviewer.md`, `opencode.jsonc` |
-| `scripts/` | CLI `brain.js`, `graph.js` и общее ядро `graph-core.mjs` |
+| `scripts/` | CLI `brain.js`, `graph.js`, `oc-check.js` и общее ядро `graph-core.mjs` |
 
 ## Глобальная интеграция
 
