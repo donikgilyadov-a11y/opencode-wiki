@@ -34,6 +34,17 @@
 | `/oc-check` | Самопроверка сборки (19 проверок), отчёт в `brain/reports/`. См. [self-check](self-check.md) |
 | `/repo-audit <путь>` | Read-only аудит репозитория, отчёт в `brain/reports/`. См. [аудит](repo-audit.md) |
 
+## От плагинов
+
+Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **17 навыков** и **34 команды** (включая встроенные).
+
+- `opencode-v2-ponytail-scoped` добавляет 6 навыков и 6 команд: `/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`. По умолчанию выключен: `~/.config/opencode/ponytail-scoped.json` содержит `{"default":"off","agents":{}}`. См. [плагины](plugins.md).
+- `@slkiser/opencode-quota` добавляет 4 команды: `/quota`, `/quota_usage [range]`, `/quota_status`, `/quota_settings`, плюс инструменты `quota_status`, `quota_settings_get/set`, `quota_provider_add/remove/test`.
+- `envsitter-guard` добавляет 15 инструментов `envsitter_*` для безопасной работы с `.env` без вывода секретов.
+- `cc-safety-net` добавляет команду `/cc-safety-net` и защитные хуки; `opencode-auto-resume` — `/auto-resume off|on|status`.
+
+Итого собственных файлов: 8 навыков в `~/Desktop/opencode-boost/skills/` и 10 команд в `~/.config/opencode/commands/`.
+
 ## Глобальные агенты
 
 - `brain-keeper` — subagent; edit запрещён везде, кроме `~/Desktop/opencode-boost/brain/**`; shell запрещён.
