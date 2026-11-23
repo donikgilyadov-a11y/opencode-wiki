@@ -1,11 +1,13 @@
 # Интеграция Obsidian и OpenCode
 
-План по связыванию Obsidian с локальной средой OpenCode на этом ПК. Obsidian ещё не установлен — страница фиксирует изученные варианты и безопасный порядок включения.
+План по связыванию Obsidian с локальной средой OpenCode на этом ПК. Obsidian установлен, страница фиксирует изученные варианты и безопасный порядок включения.
 
 ## Состояние
 
-- Obsidian: ещё не установлен (проверено по `%LOCALAPPDATA%\Obsidian`, `%APPDATA%\Obsidian`, ярлыкам).
-- Второй мозг уже в формате Obsidian: `~/Desktop/opencode-boost/brain/`, вики-ссылки `[[...]]`, теги `#тег`, дневники.
+- Obsidian: установлен (`C:\Program Files\Obsidian`), конфиг в `%APPDATA%\Obsidian`.
+- Экспериментальный vault пользователя: `C:\Users\deda donik\Desktop\projects\opencodeObsidian\opencode` (зарегистрирован в `obsidian.json`).
+- Второй мозг уже в формате Obsidian: `~/Desktop/opencode-boost/brain/`, вики-ссылки `[[...]]`, теги `#тег`, дневники; добавлен как второй vault в Obsidian.
+- Community-плагины пока не установлены.
 - Решение: [ADR 0004](../decisions/0004-obsidian-integration.md) в мозге.
 
 ## Фаза 1 — vault без плагинов
