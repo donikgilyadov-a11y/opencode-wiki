@@ -23,6 +23,7 @@
 - [Аудит репозиториев](repo-audit.md) — read-only инструменты `audit.quick` / `audit.repo`.
 - [Computer use и browser use](computer-use.md) — управление Windows и веб-страницами.
 - [Интеграция Obsidian](obsidian-integration.md) — план: vault из brain, Local REST API + MCP, OpenCode внутри Obsidian.
+- [DevKit](devkit.md) — публичный набор расширений с установщиком для переноса на другой ПК.
 
 ## Как обновлять
 
