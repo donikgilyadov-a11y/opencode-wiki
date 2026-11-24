@@ -14,7 +14,7 @@ node --test scripts/tests/*.test.js scripts/tests/*.test.mjs
 ```
 
 `package.json` содержит именно glob-форму: Node 24 не принимает каталог `scripts/tests`
-как аргумент `--test`. Сейчас **23 теста**, все проходят:
+как аргумент `--test`. Сейчас **29 тестов**, все проходят:
 
 | Файл | Что проверяет |
 | --- | --- |
@@ -24,6 +24,7 @@ node --test scripts/tests/*.test.js scripts/tests/*.test.mjs
 | `scripts/tests/oc-check.test.js` | `readJsonc` (комментарии внутри URL, битый JSON), `count` |
 | `scripts/tests/doctor.test.js` | `slug`, `parseFrontmatter`, `replaceTokens`, `writeText` с бэкапом, `skillFixes` на временных навыках |
 | `scripts/tests/session-audit.test.js` | `parseLine`, `normalize`, `redact`, `analyze` (паттерны/циклы/CLI), `saveReport` без секретов |
+| `scripts/tests/reaudit.test.js` | `redact`, `buildIndex`/`resolveFile`, статусы `evaluateCheck`, `diffBaseline`, `renderReport`/`saveReport` |
 
 Для тестов `brain.js` научился читать `OPENCODE_BRAIN`, а `oc-check.js` экспортирует
 вспомогательные функции и не запускает `main()` при импорте. `oc-doctor.js` экспортирует

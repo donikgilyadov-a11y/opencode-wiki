@@ -28,6 +28,7 @@
 | `opencode-skill-creation` | Создать навык по конвенциям OpenCode V2. См. [мета-навыки](meta-skills.md) |
 | `skill-doc-authoring` | Превратить SOP в короткий `SKILL.md` с надёжным описанием-триггером. См. [мета-навыки](meta-skills.md) |
 | `skill-creator` | Установить, обновить, удалить и диагностировать навыки. См. [мета-навыки](meta-skills.md) |
+| `reaudit` | Повторно проверить ai-os-new после исправлений, сравнить с базой 24 проверок. См. [повторный аудит](reaudit.md) |
 
 ## Глобальные команды
 
@@ -49,10 +50,11 @@
 | `/oc-check` | Самопроверка сборки (20 проверок), отчёт в `brain/reports/`. См. [self-check](self-check.md) |
 | `/repo-audit <путь>` | Read-only аудит репозитория, отчёт в `brain/reports/`. См. [аудит](repo-audit.md) |
 | `/session-audit` | Read-only аудит логов сессий, отчёт в `brain/reports/`. См. [аудит сессий](session-audit.md) |
+| `/reaudit <папка>` | Повторный read-only аудит 24 проверок с diff против базовой линии. См. [повторный аудит](reaudit.md) |
 
 ## От плагинов
 
-Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **31 навык** и **36 команд** (включая встроенные).
+Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **32 навыка** и **37 команд** (включая встроенные).
 
 - `opencode-v2-ponytail-scoped` добавляет 6 навыков и 6 команд: `/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`. По умолчанию выключен: `~/.config/opencode/ponytail-scoped.json` содержит `{"default":"off","agents":{}}`. См. [плагины](plugins.md).
 - `@slkiser/opencode-quota` добавляет 4 команды: `/quota`, `/quota_usage [range]`, `/quota_status`, `/quota_settings`, плюс инструменты `quota_status`, `quota_settings_get/set`, `quota_provider_add/remove/test`.
@@ -60,7 +62,7 @@
 - `cc-safety-net` добавляет команду `/cc-safety-net` и защитные хуки; `opencode-auto-resume` — `/auto-resume off|on|status`.
 - `hffmnnj.deep-research` регистрирует навык `deep-research`, 12 инструментов `tools.research.*` (только Code Mode) и трёх read-only субагентов: `deep-research/researcher`, `deep-research/verifier`, `deep-research/librarian`. Библиотека исследований хранится в `~/.local/share/opencode-deep-research/library/`. См. [глубокое исследование](deep-research.md).
 
-Итого собственных файлов: 21 навык в `~/Desktop/opencode-boost/skills/` и 13 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md).
+Итого собственных файлов: 22 навыка в `~/Desktop/opencode-boost/skills/` и 14 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md).
 
 ## Глобальные агенты
 
