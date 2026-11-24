@@ -8,7 +8,7 @@
 ## Запуск
 
 ```powershell
-node scripts/reaudit.js "C:\Users\deda donik\Desktop\projects\myproject24112026\ai-os-new-main" --name ai-os-new
+node scripts/reaudit.js "C:\Users\deda donik\Desktop\projects\myproject25112026\ai-os-new-main" --name ai-os-new
 ```
 
 Полезные флаги: `--json` (только stdout, без сохранения), `--no-save`,
@@ -31,6 +31,25 @@ node scripts/reaudit.js "C:\Users\deda donik\Desktop\projects\myproject24112026\
 Снята с локального снапшота 2026-11-24: **24 проверки, 22 open, 2 uncertain** (P0-8, P1-8), 0 fixed.
 После пуша исправлений нужно скачать свежую копию и запустить `reaudit` заново — отчёт покажет,
 какие статусы изменились.
+
+## Повторный прогон после фиксов (25.11)
+
+Свежая копия `myproject25112026\ai-os-new-main`. Скрипт после обновления паттернов:
+**fixed 7, mixed 4, open 13**, закрыто относительно базы 7, регрессий 0.
+Отчёт: `brain/reports/ai-os-new-reaudit-2026-11-24.md`.
+
+Авторитетный вердикт ручной проверки тремя read-only субагентами:
+- **FIXED 6**: P0-1, P0-2, P0-4, P1-1, P1-4, P1-5.
+- **PARTIAL 8**: P0-3, P0-7, P0-8, P0-9, P1-2, P1-3, P1-6, P1-9.
+- **OPEN 10**: P0-5, P0-6, P1-7, P1-8, P1-10, P1-11, P1-12, P2-1, P2-2, P2-3.
+
+Расхождение P0-8: скрипт видит `assertPresetAllowed` и считает проверку закрытой, но в
+`AgentsPanel/AgentDetailPanel.tsx:522,565,586,618` вызывающие не передают `callerRole`, а роль
+берётся от вызывающего и не подтверждает admin-идентичность — по факту PARTIAL.
+
+В харнесс исправлены устаревшие паттерны и пути (например `trust/governance-service.ts`,
+`key-management/key-service.ts`, `llm/decorators/cost-manager.ts`), увеличены `window` для P0-4 и P1-4,
+уточнён открытый паттерн P1-8, исправлен баг с объектом базовой линии в `renderReport()`.
 
 ## Правила
 
