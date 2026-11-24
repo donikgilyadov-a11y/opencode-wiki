@@ -4,7 +4,7 @@
 
 ## Зачем нам это
 
-У [DevKit](devkit.md) сейчас 39 навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
+У [DevKit](devkit.md) сейчас 41 навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
 
 ## Уровни проверки
 
@@ -61,6 +61,10 @@ Expand-Archive uv.zip -DestinationPath uv
 ## Производительность и API
 
 Ещё два навыка из того же MIT-источника `addyosmani/agent-skills` (коммит `e997ac5b9a74eab332d5e9793bb38a38c8cfdd74`): `performance-optimization` и `api-and-interface-design`. До установки `harness-check` показал 2 из 2 загружаются, `validate --tiers 1 --checks schema,quality --min-score 70` — 2 из 2 прошли с оценками A 90.2 / A 90.2. В `api-and-interface-design` price-like токен `$50` заменён на `USD 50`, чтобы харнесс не принимал пример за подстановку аргумента. Источник и атрибуция — `skills/PERF-API-ATTRIBUTION.md`; подробности — [производительность и API](perf-api-skills.md).
+
+## Сомнение и миграции
+
+Ещё два навыка из того же MIT-источника `addyosmani/agent-skills` (коммит `e997ac5b9a74eab332d5e9793bb38a38c8cfdd74`): `doubt-driven-development` и `deprecation-and-migration`. Первый заставляет перепроверять неочевидные выводы в свежем контексте, второй описывает expand/contract миграции и снятие устаревшего кода. До установки `harness-check` показал 2 из 2 загружаются, `validate --tiers 1 --checks schema,quality --min-score 70` — 2 из 2 прошли с оценками A 90.2 / A 90.2. Источник и атрибуция — `skills/DOUBT-MIGRATION-ATTRIBUTION.md`; подробности — [сомнение и миграции](doubt-migration-skills.md).
 
 ## Ограничения
 
