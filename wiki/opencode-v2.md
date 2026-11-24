@@ -5,7 +5,7 @@
 
 ## Версия и сервис
 
-- OpenCode Desktop **v2.3.2**, фоновый сервис `http://127.0.0.1:28894`.
+- OpenCode Desktop **v2.4.1**, фоновый сервис `http://127.0.0.1:28894`.
 - CLI: `C:\Users\deda donik\AppData\Local\Programs\@opencode-aidesktop\resources\opencode-cli.exe`.
 - Прямой HTTP к сервису даёт 401: используй `opencode api <method> <path>` — CLI сам авторизуется.
 - Полезно: `service status`, `api get /api/info`, `/api/plugin`, `/api/command`, `/api/skill`, `/api/agent`, `plugin add`.

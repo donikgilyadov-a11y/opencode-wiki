@@ -72,12 +72,12 @@ HTTP-сервер слушает `127.0.0.1:27123`.
 `<vault>/.obsidian/plugins/another-opencode-for-obsidian/` (`main.js`, `manifest.json`, `styles.css`);
 плагин добавлен в `community-plugins.json`, Obsidian перезагружен командой `app:reload` через Local REST API.
 
-- Только V2 API (`/api/info`, `/api/session`, `/api/event`), требует OpenCode ≥ 2.1.3 (сейчас 2.3.2).
+- Только V2 API (`/api/info`, `/api/session`, `/api/event`), требует OpenCode ≥ 2.1.3 (сейчас 2.4.1).
 - Не запускает и не останавливает сервис: подключается к уже существующему
   `%USERPROFILE%\.local\state\opencode\service.json`. Плагин оболочки OpenCode не трогает, с ним работают
   и MCP-мост, и админка.
 - Подтверждено через `~/.local/state/another-opencode-for-obsidian/status.json`:
-  `serviceState: attached`, `service.url: http://127.0.0.1:28894`, `version: 2.3.2`,
+  `serviceState: attached`, `service.url: http://127.0.0.1:28894`, `version: 2.4.1`,
   `projectDirectory: <vault brain>`, событийный поток `/api/event` подключён.
 - В палитре команд появились 6 команд плагина: открыть/переключить панель, глубокий режим, копировать
   диагностику, добавить выделение или текущую заметку в контекст запроса.
