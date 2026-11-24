@@ -35,6 +35,9 @@
 | `code-reviewer` | Структурное ревью кода с приоритетом по риску. См. [стартовый набор](starter6.md) |
 | `brainstorming` | Превратить расплывчатую идею в проверенный дизайн. См. [стартовый набор](starter6.md) |
 | `caveman` | Короткий стиль ответа без потери технических фактов. См. [стартовый набор](starter6.md) |
+| `verification-before-completion` | Никаких «готово» без свежего вывода проверки. См. [навыки процесса](next3.md) |
+| `dispatching-parallel-agents` | Независимые задачи — отдельным субагентам. См. [навыки процесса](next3.md) |
+| `receiving-code-review` | Техническая оценка ревью вместо слепого согласия. См. [навыки процесса](next3.md) |
 
 ## Глобальные команды
 
@@ -60,7 +63,7 @@
 
 ## От плагинов
 
-Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **38 навыков** и **37 команд** (включая встроенные).
+Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **41 навык** и **37 команд** (включая встроенные).
 
 - `opencode-v2-ponytail-scoped` добавляет 6 навыков и 6 команд: `/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`. По умолчанию выключен: `~/.config/opencode/ponytail-scoped.json` содержит `{"default":"off","agents":{}}`. См. [плагины](plugins.md).
 - `@slkiser/opencode-quota` добавляет 4 команды: `/quota`, `/quota_usage [range]`, `/quota_status`, `/quota_settings`, плюс инструменты `quota_status`, `quota_settings_get/set`, `quota_provider_add/remove/test`.
@@ -68,7 +71,7 @@
 - `cc-safety-net` добавляет команду `/cc-safety-net` и защитные хуки; `opencode-auto-resume` — `/auto-resume off|on|status`.
 - `hffmnnj.deep-research` регистрирует навык `deep-research`, 12 инструментов `tools.research.*` (только Code Mode) и трёх read-only субагентов: `deep-research/researcher`, `deep-research/verifier`, `deep-research/librarian`. Библиотека исследований хранится в `~/.local/share/opencode-deep-research/library/`. См. [глубокое исследование](deep-research.md).
 
-Итого собственных файлов: 28 навыков в `~/Desktop/opencode-boost/skills/` и 14 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md) и [стартовый набор](starter6.md).
+Итого собственных файлов: 31 навык в `~/Desktop/opencode-boost/skills/` и 14 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md), [стартовый набор](starter6.md) и [навыки процесса](next3.md).
 
 ## Глобальные агенты
 
