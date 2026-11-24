@@ -15,7 +15,7 @@
 | Папка | Назначение |
 | --- | --- |
 | `brain/` | Второй мозг: индекс, долгосрочные факты, дневник, знания, ADR, карточки проектов, графы, состояние автопилота |
-| `skills/` | 41 навыков: `second-brain`, `opencode-tuner`, `md-examples`, `admin-panel`, `graph`, `autopilot`, `computer-use`, `repo-audit`, `obsidian`, `session-audit`, `react-expert`, `typescript-pro`, `react-best-practices`, `deep-research-lite`, `repository-analysis`, `exploring-code`, `analyzing-projects`, `code-explorer`, `opencode-skill-creation`, `skill-doc-authoring`, `skill-creator`, `reaudit`, `systematic-debugging`, `test-driven-development`, `git-commits-prs`, `code-reviewer`, `brainstorming`, `caveman`, `verification-before-completion`, `dispatching-parallel-agents`, `receiving-code-review`, `reviewing-security`, `memory-leaks`, `backpressure`, `race-conditions`, `error-handling`, `observability-instrumentation`, `performance-optimization`, `api-and-interface-design`, `doubt-driven-development`, `deprecation-and-migration` |
+| `skills/` | 45 навыков: `second-brain`, `opencode-tuner`, `md-examples`, `admin-panel`, `graph`, `autopilot`, `computer-use`, `repo-audit`, `obsidian`, `session-audit`, `react-expert`, `typescript-pro`, `react-best-practices`, `deep-research-lite`, `repository-analysis`, `exploring-code`, `analyzing-projects`, `code-explorer`, `opencode-skill-creation`, `skill-doc-authoring`, `skill-creator`, `reaudit`, `systematic-debugging`, `test-driven-development`, `git-commits-prs`, `code-reviewer`, `brainstorming`, `caveman`, `verification-before-completion`, `dispatching-parallel-agents`, `receiving-code-review`, `reviewing-security`, `memory-leaks`, `backpressure`, `race-conditions`, `error-handling`, `observability-instrumentation`, `performance-optimization`, `api-and-interface-design`, `doubt-driven-development`, `deprecation-and-migration`, `frontend-ui-engineering`, `accessibility-engineering`, `web-design-guidelines`, `vercel-composition-patterns` |
 | `admin/` | Локальная админка на `127.0.0.1:8787`: `server.js`, `index.html`, `graph.html`, `start.cmd` |
 | `md-examples/` | Рабочие шаблоны: `AGENTS.md`, `SKILL.md`, `review.md`, `reviewer.md`, `opencode.jsonc` |
 | `scripts/` | CLI `brain.js`, `graph.js`, `oc-check.js`, `oc-doctor.js`, `repo-audit.js`, `session-audit.js`, `reaudit.js`, `smoke-admin.js`, ядра `graph-core.mjs`, `audit-core.mjs`, юнит-тесты в `scripts/tests/`, `package.json` |
@@ -44,12 +44,12 @@ node "C:\Users\deda donik\Desktop\opencode-boost\scripts\graph.js" memory
 - Сервис OpenCode v2.4.1 на `127.0.0.1:28894`, `/api/info` отвечает.
 - Все четырнадцать плагинов активны в `/api/plugin`.
 - Админка `/api/data` и `/api/graphs` — HTTP 200; `/graph.html` рисует Mermaid SVG.
-- Граф памяти: 15 узлов, 41 связь.
+- Граф памяти: 58 узлов, 101 связь.
 - Сканер посторонних символов: `SUSPECT_LINES=0`.
-- Юнит-тесты: 29/29; дымовая проверка админки: 8/8; проверка ссылок вики: 265/0; самопроверка: 20/20.
+- Юнит-тесты: 29/29; дымовая проверка админки: 8/8; проверка ссылок вики: 283/0; самопроверка: 20/20.
   См. [тесты и CI](../testing-ci.md).
 
 ## Ссылки
 
-- [Второй мозг](../second-brain.md) · [Админка](../admin-panel.md) · [Автопилот](../autonomy.md) · [Тесты и CI](../testing-ci.md) · [Аудит сессий](../session-audit.md) · [Мета-навыки](../meta-skills.md) · [Стартовый набор](../starter6.md) · [Навыки процесса](../next3.md) · [Повторный аудит](../reaudit.md)
+- [Второй мозг](../second-brain.md) · [Админка](../admin-panel.md) · [Автопилот](../autonomy.md) · [Тесты и CI](../testing-ci.md) · [Аудит сессий](../session-audit.md) · [Мета-навыки](../meta-skills.md) · [Стартовый набор](../starter6.md) · [Навыки процесса](../next3.md) · [Дизайн и UI/UX](../ui-design-skills.md) · [Повторный аудит](../reaudit.md)
 - [Решение 0001](../../decisions/0001-opencode-boost.md) · [Журнал](../../journal/2026-11-23.md)

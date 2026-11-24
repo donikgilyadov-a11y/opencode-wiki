@@ -4,7 +4,7 @@
 
 ## Зачем нам это
 
-У [DevKit](devkit.md) сейчас 41 навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
+У [DevKit](devkit.md) сейчас 45 навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
 
 ## Уровни проверки
 
@@ -65,6 +65,10 @@ Expand-Archive uv.zip -DestinationPath uv
 ## Сомнение и миграции
 
 Ещё два навыка из того же MIT-источника `addyosmani/agent-skills` (коммит `e997ac5b9a74eab332d5e9793bb38a38c8cfdd74`): `doubt-driven-development` и `deprecation-and-migration`. Первый заставляет перепроверять неочевидные выводы в свежем контексте, второй описывает expand/contract миграции и снятие устаревшего кода. До установки `harness-check` показал 2 из 2 загружаются, `validate --tiers 1 --checks schema,quality --min-score 70` — 2 из 2 прошли с оценками A 90.2 / A 90.2. Источник и атрибуция — `skills/DOUBT-MIGRATION-ATTRIBUTION.md`; подробности — [сомнение и миграции](doubt-migration-skills.md).
+
+## Дизайн и UI/UX
+
+Четыре навыка (`frontend-ui-engineering`, `accessibility-engineering`, `web-design-guidelines`, `vercel-composition-patterns`) прошли `harness-check` 4/4 и `validate --tiers 1 --checks schema,quality --min-score 70` 4/4. Оценки: A 90.2, B 89.5, B 83.2, B 83.0. Перед финальным прогоном в `web-design-guidelines` убран литерал `$ARGUMENTS` и XML-подобное значение `metadata.argument-hint`; в атрибуции исправлены случайные иноязычные вкрапления. Источники MIT зафиксированы: `addyosmani/agent-skills` `e997ac5b9a74eab332d5e9793bb38a38c8cfdd74` и `vercel-labs/agent-skills` `5a37a6329fbad3666c3207392a6a7c0110e92efb`. Атрибуция — `skills/UI-DESIGN-ATTRIBUTION.md`; подробности — [дизайн и UI/UX](ui-design-skills.md).
 
 ## Ограничения
 
