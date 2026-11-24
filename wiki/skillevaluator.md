@@ -4,7 +4,7 @@
 
 ## Зачем нам это
 
-У [DevKit](devkit.md) тринадцать навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
+У [DevKit](devkit.md) сейчас 37 навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
 
 ## Уровни проверки
 
@@ -53,6 +53,10 @@ Expand-Archive uv.zip -DestinationPath uv
 - `react-best-practices` — [bobum/opencode-skills](https://github.com/bobum/opencode-skills/tree/master/.opencode/skills/react-best-practices), `4bd8ab3bb9ba80af2c7f3c5db50615a1240b0aaf`, MIT; адаптация `vercel-labs/agent-skills`.
 
 Полный список атрибуций лежит в `skills/FRONTEND-ATTRIBUTION.md` репозитория DevKit. Репозиторий `FrancoStino/opencode-skills-collection` не использовался: все обещанные навыки там ведут к одному файлу.
+
+## Навыки укрепления кода
+
+Ещё шесть внешних навыков отобраны под долги аудита ai-os-new: `reviewing-security`, `memory-leaks`, `backpressure`, `race-conditions`, `error-handling`, `observability-instrumentation`. До установки `harness-check` показал 6 из 6 загружаются, `validate --tiers 1 --checks schema,quality --min-score 70` — 6 из 6 прошли (85.2–90.2). В `error-handling` добавлен верхний заголовок. Источники и лицензии зафиксированы в `skills/HARDENING-ATTRIBUTION.md`; подробности — [укрепление кода](hardening-skills.md).
 
 ## Ограничения
 

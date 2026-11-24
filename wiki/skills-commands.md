@@ -38,6 +38,12 @@
 | `verification-before-completion` | Никаких «готово» без свежего вывода проверки. См. [навыки процесса](next3.md) |
 | `dispatching-parallel-agents` | Независимые задачи — отдельным субагентам. См. [навыки процесса](next3.md) |
 | `receiving-code-review` | Техническая оценка ревью вместо слепого согласия. См. [навыки процесса](next3.md) |
+| `reviewing-security` | Безопасность: путь от атакующего к последствию, авторизация, SSRF, секреты. См. [укрепление кода](hardening-skills.md) |
+| `memory-leaks` | Утечки памяти: слушатели, таймеры, бесконечно растущие коллекции. См. [укрепление кода](hardening-skills.md) |
+| `backpressure` | Ограничение очередей и producer-consumer без бесконечного буфера. См. [укрепление кода](hardening-skills.md) |
+| `race-conditions` | Гонки: read-modify-write, check-then-act, переходы состояний. См. [укрепление кода](hardening-skills.md) |
+| `error-handling` | Продуманные пути ошибок и аккуратная деградация. См. [укрепление кода](hardening-skills.md) |
+| `observability-instrumentation` | Логи, метрики, трейсы и алерты. См. [укрепление кода](hardening-skills.md) |
 
 ## Глобальные команды
 
@@ -63,7 +69,7 @@
 
 ## От плагинов
 
-Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **41 навык** и **37 команд** (включая встроенные).
+Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **47 навыков** и **37 команд** (включая встроенные).
 
 - `opencode-v2-ponytail-scoped` добавляет 6 навыков и 6 команд: `/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`. По умолчанию выключен: `~/.config/opencode/ponytail-scoped.json` содержит `{"default":"off","agents":{}}`. См. [плагины](plugins.md).
 - `@slkiser/opencode-quota` добавляет 4 команды: `/quota`, `/quota_usage [range]`, `/quota_status`, `/quota_settings`, плюс инструменты `quota_status`, `quota_settings_get/set`, `quota_provider_add/remove/test`.
@@ -71,7 +77,7 @@
 - `cc-safety-net` добавляет команду `/cc-safety-net` и защитные хуки; `opencode-auto-resume` — `/auto-resume off|on|status`.
 - `hffmnnj.deep-research` регистрирует навык `deep-research`, 12 инструментов `tools.research.*` (только Code Mode) и трёх read-only субагентов: `deep-research/researcher`, `deep-research/verifier`, `deep-research/librarian`. Библиотека исследований хранится в `~/.local/share/opencode-deep-research/library/`. См. [глубокое исследование](deep-research.md).
 
-Итого собственных файлов: 31 навык в `~/Desktop/opencode-boost/skills/` и 14 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md), [стартовый набор](starter6.md) и [навыки процесса](next3.md).
+Итого собственных файлов: 37 навыков в `~/Desktop/opencode-boost/skills/` и 14 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md), [стартовый набор](starter6.md), [навыки процесса](next3.md) и [укрепление кода](hardening-skills.md).
 
 ## Глобальные агенты
 
