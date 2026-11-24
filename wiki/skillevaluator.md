@@ -4,7 +4,7 @@
 
 ## Зачем нам это
 
-У [DevKit](devkit.md) сейчас 37 навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
+У [DevKit](devkit.md) сейчас 39 навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
 
 ## Уровни проверки
 
@@ -57,6 +57,10 @@ Expand-Archive uv.zip -DestinationPath uv
 ## Навыки укрепления кода
 
 Ещё шесть внешних навыков отобраны под долги аудита ai-os-new: `reviewing-security`, `memory-leaks`, `backpressure`, `race-conditions`, `error-handling`, `observability-instrumentation`. До установки `harness-check` показал 6 из 6 загружаются, `validate --tiers 1 --checks schema,quality --min-score 70` — 6 из 6 прошли (85.2–90.2). В `error-handling` добавлен верхний заголовок. Источники и лицензии зафиксированы в `skills/HARDENING-ATTRIBUTION.md`; подробности — [укрепление кода](hardening-skills.md).
+
+## Производительность и API
+
+Ещё два навыка из того же MIT-источника `addyosmani/agent-skills` (коммит `e997ac5b9a74eab332d5e9793bb38a38c8cfdd74`): `performance-optimization` и `api-and-interface-design`. До установки `harness-check` показал 2 из 2 загружаются, `validate --tiers 1 --checks schema,quality --min-score 70` — 2 из 2 прошли с оценками A 90.2 / A 90.2. В `api-and-interface-design` price-like токен `$50` заменён на `USD 50`, чтобы харнесс не принимал пример за подстановку аргумента. Источник и атрибуция — `skills/PERF-API-ATTRIBUTION.md`; подробности — [производительность и API](perf-api-skills.md).
 
 ## Ограничения
 
