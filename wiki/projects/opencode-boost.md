@@ -15,7 +15,7 @@
 | Папка | Назначение |
 | --- | --- |
 | `brain/` | Второй мозг: индекс, долгосрочные факты, дневник, знания, ADR, карточки проектов, графы, состояние автопилота |
-| `skills/` | 22 навыка: `second-brain`, `opencode-tuner`, `md-examples`, `admin-panel`, `graph`, `autopilot`, `computer-use`, `repo-audit`, `obsidian`, `session-audit`, `react-expert`, `typescript-pro`, `react-best-practices`, `deep-research-lite`, `repository-analysis`, `exploring-code`, `analyzing-projects`, `code-explorer`, `opencode-skill-creation`, `skill-doc-authoring`, `skill-creator`, `reaudit` |
+| `skills/` | 28 навыков: `second-brain`, `opencode-tuner`, `md-examples`, `admin-panel`, `graph`, `autopilot`, `computer-use`, `repo-audit`, `obsidian`, `session-audit`, `react-expert`, `typescript-pro`, `react-best-practices`, `deep-research-lite`, `repository-analysis`, `exploring-code`, `analyzing-projects`, `code-explorer`, `opencode-skill-creation`, `skill-doc-authoring`, `skill-creator`, `reaudit`, `systematic-debugging`, `test-driven-development`, `git-commits-prs`, `code-reviewer`, `brainstorming`, `caveman` |
 | `admin/` | Локальная админка на `127.0.0.1:8787`: `server.js`, `index.html`, `graph.html`, `start.cmd` |
 | `md-examples/` | Рабочие шаблоны: `AGENTS.md`, `SKILL.md`, `review.md`, `reviewer.md`, `opencode.jsonc` |
 | `scripts/` | CLI `brain.js`, `graph.js`, `oc-check.js`, `oc-doctor.js`, `repo-audit.js`, `session-audit.js`, `reaudit.js`, `smoke-admin.js`, ядра `graph-core.mjs`, `audit-core.mjs`, юнит-тесты в `scripts/tests/`, `package.json` |
@@ -46,10 +46,10 @@ node "C:\Users\deda donik\Desktop\opencode-boost\scripts\graph.js" memory
 - Админка `/api/data` и `/api/graphs` — HTTP 200; `/graph.html` рисует Mermaid SVG.
 - Граф памяти: 15 узлов, 41 связь.
 - Сканер посторонних символов: `SUSPECT_LINES=0`.
-- Юнит-тесты: 29/29; дымовая проверка админки: 8/8; проверка ссылок вики: 178/0; самопроверка: 20/20.
+- Юнит-тесты: 29/29; дымовая проверка админки: 8/8; проверка ссылок вики: 201/0; самопроверка: 20/20.
   См. [тесты и CI](../testing-ci.md).
 
 ## Ссылки
 
-- [Второй мозг](../second-brain.md) · [Админка](../admin-panel.md) · [Автопилот](../autonomy.md) · [Тесты и CI](../testing-ci.md) · [Аудит сессий](../session-audit.md) · [Мета-навыки](../meta-skills.md) · [Повторный аудит](../reaudit.md)
+- [Второй мозг](../second-brain.md) · [Админка](../admin-panel.md) · [Автопилот](../autonomy.md) · [Тесты и CI](../testing-ci.md) · [Аудит сессий](../session-audit.md) · [Мета-навыки](../meta-skills.md) · [Стартовый набор](../starter6.md) · [Повторный аудит](../reaudit.md)
 - [Решение 0001](../../decisions/0001-opencode-boost.md) · [Журнал](../../journal/2026-11-23.md)
