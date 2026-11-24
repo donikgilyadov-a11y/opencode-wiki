@@ -52,6 +52,13 @@
 | `accessibility-engineering` | Аудит WCAG 2.2 AA и исправление нарушений. См. [дизайн и UI/UX](ui-design-skills.md) |
 | `web-design-guidelines` | 100+ правил Vercel по интерфейсам. См. [дизайн и UI/UX](ui-design-skills.md) |
 | `vercel-composition-patterns` | Композиция React и особенности React 19. См. [дизайн и UI/UX](ui-design-skills.md) |
+| `ai-agent-evaluation` | Регрессионные наборы и метрики качества LLM/агентов. См. [новую волну](nextwave-skills.md) |
+| `flaky-test-management` | Карантин и искоренение флейковых тестов. См. [новую волну](nextwave-skills.md) |
+| `property-based-testing` | Свойства и инварианты вместо отдельных примеров. См. [новую волну](nextwave-skills.md) |
+| `shipping-and-launch` | Релиз, canary, откат и feature flags. См. [новую волну](nextwave-skills.md) |
+| `incident-response` | SEV1-4, коммуникации и postmortem. См. [новую волну](nextwave-skills.md) |
+| `codebase-onboarding-check` | Проверка понимания кода и doc→code drift. См. [новую волну](nextwave-skills.md) |
+| `tech-writing` | Читательская документация и сообщения об ошибках. См. [новую волну](nextwave-skills.md) |
 
 ## Глобальные команды
 
@@ -77,7 +84,7 @@
 
 ## От плагинов
 
-Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **55 навыков** и **37 команд** (включая встроенные).
+Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **62 навыка** и **37 команд** (включая встроенные).
 
 - `opencode-v2-ponytail-scoped` добавляет 6 навыков и 6 команд: `/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`. По умолчанию выключен: `~/.config/opencode/ponytail-scoped.json` содержит `{"default":"off","agents":{}}`. См. [плагины](plugins.md).
 - `@slkiser/opencode-quota` добавляет 4 команды: `/quota`, `/quota_usage [range]`, `/quota_status`, `/quota_settings`, плюс инструменты `quota_status`, `quota_settings_get/set`, `quota_provider_add/remove/test`.
@@ -85,7 +92,7 @@
 - `cc-safety-net` добавляет команду `/cc-safety-net` и защитные хуки; `opencode-auto-resume` — `/auto-resume off|on|status`.
 - `hffmnnj.deep-research` регистрирует навык `deep-research`, 12 инструментов `tools.research.*` (только Code Mode) и трёх read-only субагентов: `deep-research/researcher`, `deep-research/verifier`, `deep-research/librarian`. Библиотека исследований хранится в `~/.local/share/opencode-deep-research/library/`. См. [глубокое исследование](deep-research.md).
 
-Итого собственных файлов: 45 навыков в `~/Desktop/opencode-boost/skills/` и 14 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md), [стартовый набор](starter6.md), [навыки процесса](next3.md), [укрепление кода](hardening-skills.md), [производительность и API](perf-api-skills.md) и [дизайн и UI/UX](ui-design-skills.md).
+Итого собственных файлов: 52 навыка в `~/Desktop/opencode-boost/skills/` и 14 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md), [стартовый набор](starter6.md), [навыки процесса](next3.md), [укрепление кода](hardening-skills.md), [производительность и API](perf-api-skills.md), [дизайн и UI/UX](ui-design-skills.md) и [новую волну](nextwave-skills.md).
 
 ## Глобальные агенты
 

@@ -4,7 +4,7 @@
 
 ## Зачем нам это
 
-У [DevKit](devkit.md) сейчас 45 навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
+У [DevKit](devkit.md) сейчас 52 навыка. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
 
 ## Уровни проверки
 
@@ -69,6 +69,10 @@ Expand-Archive uv.zip -DestinationPath uv
 ## Дизайн и UI/UX
 
 Четыре навыка (`frontend-ui-engineering`, `accessibility-engineering`, `web-design-guidelines`, `vercel-composition-patterns`) прошли `harness-check` 4/4 и `validate --tiers 1 --checks schema,quality --min-score 70` 4/4. Оценки: A 90.2, B 89.5, B 83.2, B 83.0. Перед финальным прогоном в `web-design-guidelines` убран литерал `$ARGUMENTS` и XML-подобное значение `metadata.argument-hint`; в атрибуции исправлены случайные иноязычные вкрапления. Источники MIT зафиксированы: `addyosmani/agent-skills` `e997ac5b9a74eab332d5e9793bb38a38c8cfdd74` и `vercel-labs/agent-skills` `5a37a6329fbad3666c3207392a6a7c0110e92efb`. Атрибуция — `skills/UI-DESIGN-ATTRIBUTION.md`; подробности — [дизайн и UI/UX](ui-design-skills.md).
+
+## Новая волна навыков
+
+Семь навыков отбирались deep-research-запуском с тремя верификаторами и прошли `harness-check` 7/7 и `validate --tiers 1 --checks schema,quality --min-score 70` 7/7 (код возврата 0). Оценки: ai-agent-evaluation A 92.0, flaky-test-management A 92.0, property-based-testing A 92.0, shipping-and-launch A 90.2, incident-response B 84.8, codebase-onboarding-check B 89.0, tech-writing B 87.2. Источники зафиксированы: `mejbaurbahar/software-tester-skills` `e3ee5dba8ca7cc1aef7bd4ed38e60b374b831002` (MIT), `addyosmani/agent-skills` `e997ac5b9a74eab332d5e9793bb38a38c8cfdd74` (MIT), `anthropics/knowledge-work-plugins` `5e504ae11498f2b8daa30d86b7dab97b2ecd8092` (Apache-2.0), `Agent-Hellboy/codebase-onboarding-check` `0eb510880dc39324c4bc575a289a45ed9b9b3c46` (MIT), `peizh/tech-writing` `130108dfc9f640727a3b70e0d6ee730fa5a32ff6` (MIT). До прогона убраны литерал `$ARGUMENTS`, внешние ссылки на `CONNECTORS.md` и упоминания о непереведённом справочнике. Атрибуция — `skills/NEXTWAVE-ATTRIBUTION.md`; подробности — [новая волна навыков](nextwave-skills.md).
 
 ## Ограничения
 
