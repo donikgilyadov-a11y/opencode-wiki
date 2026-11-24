@@ -4,7 +4,7 @@
 
 ## Зачем нам это
 
-У [DevKit](devkit.md) сейчас 52 навыка. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
+У [DevKit](devkit.md) сейчас 57 навыков. Раньше их работоспособность в OpenCode проверялась вручную: `oc-check` считал файлы, но не знал, загрузит ли OpenCode конкретный `SKILL.md`. SkillEvaluator отвечает на три вопроса: правильно ли устроен навык, загрузит ли его харнесс и помогает ли он агенту на практике.
 
 ## Уровни проверки
 
@@ -73,6 +73,10 @@ Expand-Archive uv.zip -DestinationPath uv
 ## Новая волна навыков
 
 Семь навыков отбирались deep-research-запуском с тремя верификаторами и прошли `harness-check` 7/7 и `validate --tiers 1 --checks schema,quality --min-score 70` 7/7 (код возврата 0). Оценки: ai-agent-evaluation A 92.0, flaky-test-management A 92.0, property-based-testing A 92.0, shipping-and-launch A 90.2, incident-response B 84.8, codebase-onboarding-check B 89.0, tech-writing B 87.2. Источники зафиксированы: `mejbaurbahar/software-tester-skills` `e3ee5dba8ca7cc1aef7bd4ed38e60b374b831002` (MIT), `addyosmani/agent-skills` `e997ac5b9a74eab332d5e9793bb38a38c8cfdd74` (MIT), `anthropics/knowledge-work-plugins` `5e504ae11498f2b8daa30d86b7dab97b2ecd8092` (Apache-2.0), `Agent-Hellboy/codebase-onboarding-check` `0eb510880dc39324c4bc575a289a45ed9b9b3c46` (MIT), `peizh/tech-writing` `130108dfc9f640727a3b70e0d6ee730fa5a32ff6` (MIT). До прогона убраны литерал `$ARGUMENTS`, внешние ссылки на `CONNECTORS.md` и упоминания о непереведённом справочнике. Атрибуция — `skills/NEXTWAVE-ATTRIBUTION.md`; подробности — [новая волна навыков](nextwave-skills.md).
+
+## Агентные паттерны
+
+Пять навыков authored локально по сводке советов из папки `Новая папка`: `agent-loop-contracts`, `tool-and-mcp-authoring`, `agent-eval-harness`, `context-window-budgeting`, `durable-agent-workflows`. SkillEvaluator 1.0.1: `harness-check` 5/5 загружаются, `validate --tiers 1 --checks schema,quality --min-score 70` — 5/5 проходят (94.5 / 93.2 / 93.2 / 93.2 / 92.8), exit 0. Внешнего источника и лицензионных обязательств нет — заметки authorship сохранены в `skills/AGENTOPS-NOTES.md`. Подробности — [агентные паттерны](agentops-skills.md).
 
 ## Ограничения
 

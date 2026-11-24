@@ -59,6 +59,11 @@
 | `incident-response` | SEV1-4, коммуникации и postmortem. См. [новую волну](nextwave-skills.md) |
 | `codebase-onboarding-check` | Проверка понимания кода и doc→code drift. См. [новую волну](nextwave-skills.md) |
 | `tech-writing` | Читательская документация и сообщения об ошибках. См. [новую волну](nextwave-skills.md) |
+| `agent-loop-contracts` | Договор цикла, хендофф и условия останова. См. [агентные паттерны](agentops-skills.md) |
+| `tool-and-mcp-authoring` | Безопасные схемы инструментов и MCP. См. [агентные паттерны](agentops-skills.md) |
+| `agent-eval-harness` | Локальный eval-харнесс с базовой линией. См. [агентные паттерны](agentops-skills.md) |
+| `context-window-budgeting` | Бюджет контекста и безопасная компрессия. См. [агентные паттерны](agentops-skills.md) |
+| `durable-agent-workflows` | Чекпоинты, идемпотентность и восстановление. См. [агентные паттерны](agentops-skills.md) |
 
 ## Глобальные команды
 
@@ -84,7 +89,7 @@
 
 ## От плагинов
 
-Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **62 навыка** и **37 команд** (включая встроенные).
+Помимо локальных файлов, навыки и команды регистрируют плагины. Сейчас через API видно **67 навыков** и **37 команд** (включая встроенные).
 
 - `opencode-v2-ponytail-scoped` добавляет 6 навыков и 6 команд: `/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`. По умолчанию выключен: `~/.config/opencode/ponytail-scoped.json` содержит `{"default":"off","agents":{}}`. См. [плагины](plugins.md).
 - `@slkiser/opencode-quota` добавляет 4 команды: `/quota`, `/quota_usage [range]`, `/quota_status`, `/quota_settings`, плюс инструменты `quota_status`, `quota_settings_get/set`, `quota_provider_add/remove/test`.
@@ -92,7 +97,7 @@
 - `cc-safety-net` добавляет команду `/cc-safety-net` и защитные хуки; `opencode-auto-resume` — `/auto-resume off|on|status`.
 - `hffmnnj.deep-research` регистрирует навык `deep-research`, 12 инструментов `tools.research.*` (только Code Mode) и трёх read-only субагентов: `deep-research/researcher`, `deep-research/verifier`, `deep-research/librarian`. Библиотека исследований хранится в `~/.local/share/opencode-deep-research/library/`. См. [глубокое исследование](deep-research.md).
 
-Итого собственных файлов: 52 навыка в `~/Desktop/opencode-boost/skills/` и 14 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md), [стартовый набор](starter6.md), [навыки процесса](next3.md), [укрепление кода](hardening-skills.md), [производительность и API](perf-api-skills.md), [дизайн и UI/UX](ui-design-skills.md) и [новую волну](nextwave-skills.md).
+Итого собственных файлов: 57 навыков в `~/Desktop/opencode-boost/skills/` и 14 команд в `~/.config/opencode/commands/`. См. [мета-навыки](meta-skills.md), [стартовый набор](starter6.md), [навыки процесса](next3.md), [укрепление кода](hardening-skills.md), [производительность и API](perf-api-skills.md), [дизайн и UI/UX](ui-design-skills.md), [новую волну](nextwave-skills.md) и [агентные паттерны](agentops-skills.md).
 
 ## Глобальные агенты
 
