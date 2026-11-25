@@ -30,6 +30,7 @@ node "C:\Users\deda donik\Desktop\opencode-boost\admin\server.js"
 | `/api/logs?lines=80` | Последние строки `opencode.log` с маскировкой секретов |
 | `/api/brain` | Индекс `MEMORY.md` и количество MD-файлов мозга |
 | `/api/quota` | Наличие файла настроек квот (содержимое не показывается) |
+| `/api/skills` | Счётчики `skill-lint`, наличие `skills/INDEX.md` и `TRIGGERS.md` |
 | `/api/obsidian` | Состояние моста: порты 27125/27123, PID watchdog, ярлык автозапуска и последние строки лога (без ключа) |
 | `/api/oc-check` | Полный отчёт самопроверки |
 
@@ -48,7 +49,7 @@ node "C:\Users\deda donik\Desktop\opencode-boost\admin\server.js"
 - Графы: `memory` (23/47), `project-opencode-boost`, `tree-vertikalnoesad`.
 - После обновления 2.0 во встроенном браузере: ошибок консоли нет, вкладки и log-панель загружаются,
   кнопка «Проверка» показывает `20/20 OK`.
-- Дымовая проверка `scripts/smoke-admin.js`: 8/8 OK (включая `/api/obsidian`). Playwright повторно подтвердил 0 ошибок консоли
+- Дымовая проверка `scripts/smoke-admin.js`: 9/9 OK (включая `/api/skills` и `/api/obsidian`). Playwright повторно подтвердил 0 ошибок консоли
   после того, как в обе HTML-страницы добавили data-URI SVG-иконку (убрали `404 /favicon.ico`).
   Подробнее — [тесты и CI](testing-ci.md).
 

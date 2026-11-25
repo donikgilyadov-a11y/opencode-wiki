@@ -44,12 +44,12 @@ node "C:\Users\deda donik\Desktop\opencode-boost\scripts\graph.js" memory
 - Сервис OpenCode v2.4.1 на `127.0.0.1:28894`, `/api/info` отвечает.
 - Все четырнадцать плагинов активны в `/api/plugin`.
 - Админка `/api/data` и `/api/graphs` — HTTP 200; `/graph.html` рисует Mermaid SVG.
-- Граф памяти: 61 узел, 106 связей.
+- Граф памяти: 66 узлов, 110 связей.
 - Сканер посторонних символов: `SUSPECT_LINES=0`.
-- Юнит-тесты: 29/29; дымовая проверка админки: 8/8; проверка ссылок вики: 327/0; самопроверка: 20/20.
+- Юнит-тесты: 29/29; дымовая проверка админки: 9/9; проверка ссылок вики: 338/0; самопроверка: 20/20; `skill:lint`: 57/0.
   См. [тесты и CI](../testing-ci.md).
 
 ## Ссылки
 
-- [Второй мозг](../second-brain.md) · [Админка](../admin-panel.md) · [Автопилот](../autonomy.md) · [Тесты и CI](../testing-ci.md) · [Аудит сессий](../session-audit.md) · [Мета-навыки](../meta-skills.md) · [Стартовый набор](../starter6.md) · [Навыки процесса](../next3.md) · [Дизайн и UI/UX](../ui-design-skills.md) · [Новая волна навыков](../nextwave-skills.md) · [Агентные паттерны](../agentops-skills.md) · [Повторный аудит](../reaudit.md)
+- [Второй мозг](../second-brain.md) · [Админка](../admin-panel.md) · [Автопилот](../autonomy.md) · [Тесты и CI](../testing-ci.md) · [Аудит сессий](../session-audit.md) · [Мета-навыки](../meta-skills.md) · [Стартовый набор](../starter6.md) · [Навыки процесса](../next3.md) · [Дизайн и UI/UX](../ui-design-skills.md) · [Новая волна навыков](../nextwave-skills.md) · [Агентные паттерны](../agentops-skills.md) · [Упорядочивание навыков](../skill-curation.md) · [Повторный аудит](../reaudit.md)
 - [Решение 0001](../../decisions/0001-opencode-boost.md) · [Журнал](../../journal/2026-11-23.md)

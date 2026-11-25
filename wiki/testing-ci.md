@@ -46,14 +46,14 @@ node scripts/smoke-admin.js
 ```
 
 Скрипт делает только GET-запросы к `http://127.0.0.1:8787` (адрес меняется через `ADMIN_URL`):
-`/`, `/api/data`, `/api/graphs`, `/api/logs?lines=5`, `/api/brain`, `/api/quota`, `/api/obsidian`, `/api/oc-check`.
-Последний прогон: **8/8 OK**, `/api/graphs` отдаёт 3 графа, `/api/brain` — 15 MD-файлов,
+`/`, `/api/data`, `/api/graphs`, `/api/logs?lines=5`, `/api/brain`, `/api/quota`, `/api/skills`, `/api/obsidian`, `/api/oc-check`.
+Последний прогон: **9/9 OK**, `/api/graphs` отдаёт 3 графа, `/api/brain` — 29 MD-файлов,
 `/api/oc-check` — `ok=true`.
 
 Для CI есть `npm run smoke:ci` (`node scripts/smoke-admin.js --ci`): скрипт сам поднимает
-`admin/server.js` на отдельном порту с временными фикстурами, жёстко проверяет 6 локальных
+`admin/server.js` на отдельном порту с временными фикстурами, жёстко проверяет 7 локальных
 эндпоинтов и пропускает `/api/data` и `/api/oc-check` — им нужны OpenCode CLI и сервис `:28894`.
-Локальный прогон режима `--ci`: **6 OK + 2 SKIP**, exit 0.
+Локальный прогон режима `--ci`: **7 OK + 2 SKIP**, exit 0.
 
 ## Проверка в браузере
 
@@ -73,7 +73,7 @@ node scripts/smoke-admin.js
   `package-manager-cache: false`), затем `node scripts/check-links.js`.
 - Проверяются относительные ссылки Markdown и вики-ссылки `[[...]]`. Внешние `http(s)`, `mailto:`,
   `data:` и якоря `#...` пропускаются; инлайновый код в backticks игнорируется.
-- Локальный прогон: **327 ссылок, 0 битых**. Пути вики-ссылок (`[[../wiki/README]]`) разрешаются с сохранением регистра: на регистро-зависимом Linux приведение к нижнему регистру ломало поиск `README.md`, сейчас исправлено. Workflow срабатывает на `push`, `pull_request`
+- Локальный прогон: **338 ссылок, 0 битых**. Пути вики-ссылок (`[[../wiki/README]]`) разрешаются с сохранением регистра: на регистро-зависимом Linux приведение к нижнему регистру ломало поиск `README.md`, сейчас исправлено. Workflow срабатывает на `push`, `pull_request`
   и вручную (`workflow_dispatch`).
 
 ## CI/CD и деплой вики

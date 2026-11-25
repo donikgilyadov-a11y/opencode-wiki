@@ -16,7 +16,7 @@
 | `commands/` | 13 глобальных команд, включая `/oc-doctor`, `/oc-doctor-fix` и `/session-audit` |
 | `agents/` | `brain-keeper`, `oc-admin` |
 | `admin/` | Вторая админка на `127.0.0.1:8787` |
-| `scripts/` | Мозг, графы, аудит, аудит сессий, oc-check, oc-doctor, smoke, Obsidian-прокси и watchdog, 23 теста |
+| `scripts/` | Мозг, графы, аудит, аудит сессий, oc-check, oc-doctor, skill-lint, smoke, Obsidian-прокси и watchdog, 29 тестов |
 | `config-examples/` | Примеры `opencode.jsonc`, `cli.json`, уведомлений, DCP, ponytail, INSTRUCTIONS |
 | `brain-template/` | Пустая структура второго мозга |
 
@@ -40,12 +40,13 @@ cd opencode-devkit
 
 ## Проверки
 
-- `npm test` — 23 юнит-теста (в PowerShell: `& 'C:\Program Files\nodejs\npm.cmd' test`).
-- `node scripts\smoke-admin.js` — 8 проверок админки.
+- `npm test` — 29 юнит-тестов (в PowerShell: `& 'C:\Program Files\nodejs\npm.cmd' test`).
+- `node scripts\smoke-admin.js` — 9 проверок админки.
+- `npm run skill:lint` — проверка 57 навыков: 0 ошибок, 0 предупреждений.
 - `node scripts\oc-check.js --json` — 20 проверок сборки.
 - `node scripts\oc-doctor.js --json` — план авто-врача; `--apply --json` применяет фиксы с бэкапами.
 - Установщик проверен на временных каталогах: 60 скопированных файлов и корректное слияние конфига.
-- `npm run smoke:ci` — 6 проверок плюс 2 SKIP; поднимает админку с фикстурами без сервиса OpenCode.
+- `npm run smoke:ci` — 7 проверок плюс 2 SKIP; поднимает админку с фикстурами без сервиса OpenCode.
 
 ## CI/CD и релизы
 
